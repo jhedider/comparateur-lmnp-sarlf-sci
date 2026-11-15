@@ -1,0 +1,9 @@
+# Données personnelles : scénarios chiffrés d'un achat réel
+scenarios/
+
+# Fichiers techniques de transfert
+.import*.tgz
+.patch_*.py
+
+node_modules/
+.DS_Store

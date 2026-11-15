@@ -1,0 +1,9 @@
+{
+  "name": "comparateur-lmnp-sarlf-sci",
+  "version": "0.1.0",
+  "description": "Simulateur de fiscalité locative française : LMNP (micro, réel, article 7 PLF 2027), SARL de famille, SCI IR, SCI IS",
+  "private": true,
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}

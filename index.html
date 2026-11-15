@@ -1,0 +1,1253 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Comparateur LMNP, SARL de famille et SCI : simulateur locatif gratuit</title>
+<meta name="description" content="Simulateur d'investissement locatif gratuit et sans inscription : comparez LMNP micro-BIC, LMNP au réel, SARL de famille, SCI à l'IR et SCI à l'IS. Cash-flow, amortissement, impôts, plus-value à la revente et article 7 du budget 2027.">
+<meta name="keywords" content="simulateur LMNP, comparateur LMNP SCI, SARL de famille, SCI à l'IS, SCI à l'IR, LMNP réel, micro-BIC, amortissement LMNP, location meublée, Airbnb, meublé de tourisme, investissement locatif, cash-flow, plus-value, article 7 PLF 2027, loi de finances 2027, loi Le Meur, CFE, simulateur gratuit">
+<meta name="author" content="Jed Hedider">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://jhedider.github.io/comparateur-lmnp-sarlf-sci/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Comparateur LMNP, SARL de famille et SCI : simulateur locatif gratuit">
+<meta property="og:description" content="Simulateur d'investissement locatif gratuit et sans inscription : comparez LMNP micro-BIC, LMNP au réel, SARL de famille, SCI à l'IR et SCI à l'IS. Cash-flow, amortissement, impôts, plus-value à la revente et article 7 du budget 2027.">
+<meta property="og:url" content="https://jhedider.github.io/comparateur-lmnp-sarlf-sci/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1f4f7a">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231f4f7a'/%3E%3Cpath d='M5 11.5 12 6l7 5.5V18H5z' fill='none' stroke='%23fff' stroke-width='1.8' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "Comparateur LMNP, SARL de famille, SCI", "url": "https://jhedider.github.io/comparateur-lmnp-sarlf-sci/", "description": "Simulateur d'investissement locatif gratuit et sans inscription : comparez LMNP micro-BIC, LMNP au réel, SARL de famille, SCI à l'IR et SCI à l'IS. Cash-flow, amortissement, impôts, plus-value à la revente et article 7 du budget 2027.", "applicationCategory": "FinanceApplication", "operatingSystem": "Tous navigateurs", "inLanguage": "fr-FR", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR"}, "author": {"@type": "Person", "name": "Jed Hedider"}, "license": "https://opensource.org/licenses/MIT", "featureList": ["Comparaison LMNP micro-BIC, LMNP réel, SARL de famille, SCI IR, SCI IS", "Location courte durée (Airbnb) et longue durée", "Amortissement et réintégration dans la plus-value", "Article 7 du projet de loi de finances 2027", "Tableau d'amortissement du prêt", "Cotisations sociales au-delà de 23 000 € de recettes"]}</script>
+<style>
+:root {
+  color-scheme: light;
+  --page: #f3f4f1;
+  --surface: #fcfcfb;
+  --surface-2: #eceeea;
+  --ink: #17222c;
+  --ink-2: #4c5157;
+  --muted: #7d8187;
+  --line: #dcdfda;
+  --line-strong: #c3c7c0;
+  --accent: #1f4f7a;
+  --accent-ink: #ffffff;
+  --accent-wash: #e3ecf5;
+  --good: #006300;
+  --bad: #b3261e;
+  --warn-bg: #fff4d6;
+  --warn-line: #e3b341;
+  --grid: #e4e5df;
+  --axis: #c3c2b7;
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100; --s5: #e87ba4;
+  --focus: #1f4f7a;
+  --radius-s: 4px; --radius-m: 8px;
+  --font: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --page: #121416; --surface: #1a1a19; --surface-2: #232523;
+    --ink: #eeefea; --ink-2: #c3c2b7; --muted: #8f9195;
+    --line: #2f312f; --line-strong: #444743;
+    --accent: #7fb2e6; --accent-ink: #0f1a24; --accent-wash: #1d2a37;
+    --good: #2fbf4a; --bad: #f08a80; --warn-bg: #2f2716; --warn-line: #a5801f;
+    --grid: #2c2c2a; --axis: #4a4a46;
+    --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+    --focus: #7fb2e6;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --page: #121416; --surface: #1a1a19; --surface-2: #232523;
+  --ink: #eeefea; --ink-2: #c3c2b7; --muted: #8f9195;
+  --line: #2f312f; --line-strong: #444743;
+  --accent: #7fb2e6; --accent-ink: #0f1a24; --accent-wash: #1d2a37;
+  --good: #2fbf4a; --bad: #f08a80; --warn-bg: #2f2716; --warn-line: #a5801f;
+  --grid: #2c2c2a; --axis: #4a4a46;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500; --s5: #d55181;
+  --focus: #7fb2e6;
+}
+
+[hidden] { display: none !important; }
+.ico { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.group > summary h2 .ico { color: var(--accent); }
+.btn { display: inline-flex; align-items: center; gap: 6px; }
+.btn .ico { width: 16px; height: 16px; }
+.with-ico { display: flex; align-items: center; gap: 8px; }
+.with-ico .ico { color: var(--accent); width: 20px; height: 20px; }
+.hint .big { display: block; font-size: 18px; font-weight: 700; color: var(--ink); font-variant-numeric: tabular-nums; }
+.year1 { margin-top: 28px; }
+.year1 h2 { font-size: 17px; margin: 0 0 10px; font-weight: 700; }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 0; margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); }
+.kpis div { padding: 14px 18px; border-right: 1px solid var(--line); }
+.kpis div:last-child { border-right: 0; }
+.kpis dt { font-size: 13px; color: var(--ink-2); }
+.kpis dd { margin: 2px 0 0; font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.kpis dd small { display: block; font-size: 13px; font-weight: 400; color: var(--muted); }
+@media (max-width: 720px) { .kpis div { border-right: 0; border-bottom: 1px solid var(--line); } .kpis div:last-child { border-bottom: 0; } }
+.help-btn {
+  all: unset; box-sizing: border-box; cursor: pointer; display: inline-grid; place-items: center; vertical-align: middle;
+  width: 16px; height: 16px; margin-left: 6px; border-radius: 50%; border: 1px solid var(--line-strong);
+  font-size: 11px; font-weight: 600; line-height: 1; color: var(--ink-2); background: var(--surface);
+}
+.help-btn:hover, .help-btn[aria-expanded="true"] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.help-btn:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.help-pop {
+  position: fixed; z-index: 30; width: min(320px, calc(100vw - 24px)); background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-m); padding: 12px 14px; font-size: 13px; line-height: 1.45;
+  box-shadow: 0 8px 24px rgba(0,0,0,.16);
+}
+.help-pop h4 { margin: 0 0 4px; font-size: 14px; }
+.help-pop p { margin: 0; color: var(--ink-2); }
+.help-pop dl { margin: 8px 0 0; display: grid; gap: 6px; }
+.help-pop dt { font-weight: 600; color: var(--ink); }
+.help-pop dd { margin: 0; color: var(--ink-2); }
+@media print { .help-btn, .help-pop { display: none; } }
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  background: var(--page); color: var(--ink);
+  font-family: var(--font); font-size: 15px; line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, select { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.num, td, .kpi, input[type=number] { font-variant-numeric: tabular-nums; }
+
+/* ---------- En-tête ---------- */
+.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 24px; border-bottom: 1px solid var(--line); background: var(--surface);
+}
+.top h1 { font-size: 19px; font-weight: 700; margin: 0; letter-spacing: -0.01em; }
+.top p { margin: 0; color: var(--ink-2); font-size: 13px; }
+.top-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.btn {
+  border: 1px solid var(--line-strong); background: var(--surface); border-radius: var(--radius-s);
+  padding: 6px 12px; cursor: pointer; font-size: 14px;
+}
+.btn:hover { background: var(--surface-2); }
+.btn-primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn-primary:hover { background: var(--accent); filter: brightness(1.08); }
+
+/* ---------- Mise en page ---------- */
+.layout { display: grid; grid-template-columns: 380px minmax(0, 1fr); min-height: calc(100vh - 62px); }
+.inputs {
+  border-right: 1px solid var(--line); background: var(--surface);
+  position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 8px 0 40px;
+}
+.results { padding: 24px 32px 64px; min-width: 0; }
+
+/* ---------- Saisie ---------- */
+.group { border-bottom: 1px solid var(--line); }
+.group > summary {
+  list-style: none; cursor: pointer; padding: 14px 20px;
+  display: flex; justify-content: space-between; align-items: baseline; gap: 12px;
+}
+.group > summary::-webkit-details-marker { display: none; }
+.group > summary h2 { font-size: 15px; font-weight: 600; margin: 0; display: flex; align-items: center; gap: 8px; }
+.group > summary .sum { color: var(--muted); font-size: 13px; text-align: right; }
+.group > summary::after { content: ""; width: 8px; height: 8px; border-right: 1.5px solid var(--muted); border-bottom: 1.5px solid var(--muted); transform: rotate(45deg); margin-left: 4px; flex: none; position: relative; top: -2px; transition: transform .15s; }
+.group[open] > summary::after { transform: rotate(-135deg); top: 2px; }
+.group-body { padding: 0 20px 18px; display: grid; gap: 12px; }
+.row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.row2.solo { grid-template-columns: 1fr; }
+.field { display: grid; gap: 4px; }
+.field > label, .field > .lbl { font-size: 13px; color: var(--ink-2); }
+.input-wrap { display: flex; align-items: center; border: 1px solid var(--line-strong); border-radius: var(--radius-s); background: var(--page); }
+.input-wrap:focus-within { border-color: var(--focus); box-shadow: 0 0 0 1px var(--focus); }
+.input-wrap input, .input-wrap select { border: 0; background: transparent; padding: 7px 10px; width: 100%; min-width: 0; outline: none; }
+.input-wrap .unit { padding: 0 10px 0 2px; color: var(--muted); font-size: 13px; white-space: nowrap; }
+input[type=number]::-webkit-inner-spin-button { opacity: .4; }
+.hint { font-size: 13px; color: var(--ink-2); background: var(--surface-2); border-radius: var(--radius-s); padding: 8px 10px; }
+.hint strong { color: var(--ink); font-weight: 600; }
+.seg { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.seg label {
+  border: 1px solid var(--line-strong); border-radius: var(--radius-s); padding: 8px 10px; cursor: pointer;
+  display: grid; gap: 2px; font-size: 13px; background: var(--page);
+}
+.seg label b { font-weight: 600; font-size: 14px; color: var(--ink); }
+.seg label span { color: var(--muted); font-size: 12px; line-height: 1.35; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg label:has(input:checked) { border-color: var(--accent); background: var(--accent-wash); box-shadow: inset 0 0 0 1px var(--accent); }
+.seg label:has(input:focus-visible) { outline: 2px solid var(--focus); outline-offset: 2px; }
+.seg.two label { text-align: left; }
+.check { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; }
+.check input { margin-top: 4px; accent-color: var(--accent); }
+.check small { display: block; color: var(--muted); font-size: 12px; }
+.sub { font-size: 13px; font-weight: 600; color: var(--ink-2); margin: 6px 0 -4px; }
+.adv > summary { cursor: pointer; font-size: 13px; color: var(--accent); }
+.adv[open] > summary { margin-bottom: 10px; }
+.adv .group-body { padding: 0; }
+
+/* ---------- Frise de l'article 7 ---------- */
+.law { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 20px 22px 18px; }
+.law-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; }
+.law-head h2 { font-size: 17px; margin: 0; font-weight: 700; }
+.law-head p { margin: 2px 0 0; color: var(--ink-2); font-size: 14px; max-width: 62ch; }
+.rail { list-style: none; margin: 22px 0 6px; padding: 0; display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); position: relative; }
+.rail::before { content: ""; position: absolute; left: calc(100% / 14); right: calc(100% / 14); top: 11px; border-top: 2px solid var(--line-strong); }
+.rail::after { content: ""; position: absolute; left: calc(100% / 14); width: calc(100% * 3 / 7); top: 11px; border-top: 2px solid var(--ink-2); }
+.stage { position: relative; display: grid; justify-items: center; text-align: center; gap: 6px; padding: 0 4px; z-index: 1; }
+.stage button { all: unset; cursor: pointer; display: grid; justify-items: center; gap: 6px; border-radius: var(--radius-s); padding: 0 2px 4px; }
+.stage button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.dot { width: 24px; height: 24px; border-radius: 50%; background: var(--surface); border: 2px solid var(--ink-2); display: grid; place-items: center; }
+.stage.future .dot { border-style: dashed; border-color: var(--line-strong); }
+.stage.future { color: var(--muted); }
+.stage.selected .dot { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 0 4px var(--accent-wash); }
+.stage.selected .dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--accent-ink); }
+.stage .st-name { font-size: 13px; font-weight: 600; line-height: 1.25; }
+.stage .st-date { font-size: 12px; color: var(--muted); }
+.stage.selected .st-name { color: var(--accent); }
+.stage .st-what { font-size: 12px; color: var(--ink-2); line-height: 1.3; }
+.law-detail { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-size: 14px; color: var(--ink-2); display: flex; gap: 16px; justify-content: space-between; flex-wrap: wrap; align-items: baseline; }
+.law-detail strong { color: var(--ink); }
+.perso { margin-top: 14px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.perso[hidden] { display: none; }
+
+/* ---------- Revente ---------- */
+.horizon { margin: 28px 0 12px; display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.horizon h2 { font-size: 22px; margin: 0; font-weight: 700; letter-spacing: -0.015em; }
+.horizon h2 output { color: var(--accent); }
+.horizon input[type=range] { flex: 1; min-width: 200px; accent-color: var(--accent); }
+.horizon .yr { color: var(--ink-2); font-size: 14px; }
+
+/* ---------- Tableau comparatif ---------- */
+.compare-wrap { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); }
+table.compare { border-collapse: collapse; width: 100%; min-width: 760px; }
+.compare th, .compare td { padding: 10px 14px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.compare thead th { font-size: 13px; font-weight: 600; vertical-align: bottom; color: var(--ink); }
+.compare thead th .sw { display: inline-block; width: 18px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+.compare th[scope=row] { text-align: left; font-weight: 500; color: var(--ink-2); font-size: 14px; }
+.compare th[scope=row] small { display: block; color: var(--muted); font-weight: 400; font-size: 12px; white-space: normal; max-width: 34ch; }
+.compare tbody tr:last-child td, .compare tbody tr:last-child th { border-bottom: 0; }
+.compare tr.key td { font-size: 17px; font-weight: 700; color: var(--ink); }
+.compare td.best { position: relative; }
+.compare td.best::before { content: "meilleur"; display: block; font-size: 11px; font-weight: 600; color: var(--good); }
+.neg { color: var(--bad); }
+.compare td.off { color: var(--muted); }
+.flag { display: block; font-size: 11px; font-weight: 600; color: var(--bad); white-space: normal; }
+
+/* ---------- Graphiques ---------- */
+.panel { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); }
+.tabs { display: flex; gap: 2px; padding: 6px 6px 0; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs button { all: unset; cursor: pointer; padding: 10px 14px; font-size: 14px; color: var(--ink-2); border-bottom: 2px solid transparent; white-space: nowrap; border-radius: var(--radius-s) var(--radius-s) 0 0; }
+.tabs button:hover { color: var(--ink); background: var(--surface-2); }
+.tabs button[aria-selected=true] { color: var(--ink); font-weight: 600; border-bottom-color: var(--accent); }
+.tabs button:focus-visible { outline: 2px solid var(--focus); outline-offset: -2px; }
+.chart-body { padding: 18px 20px 20px; }
+.chart-head { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; flex-wrap: wrap; }
+.chart-head h3 { margin: 0; font-size: 16px; }
+.chart-head p { margin: 2px 0 0; color: var(--ink-2); font-size: 14px; max-width: 70ch; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 6px; }
+.legend button { all: unset; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; font-size: 13px; padding: 4px 10px; border: 1px solid var(--line-strong); border-radius: 999px; }
+.legend button[aria-pressed=false] { color: var(--muted); border-style: dashed; }
+.legend button[aria-pressed=false] svg { opacity: .35; }
+.legend button:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.chart { position: relative; width: 100%; }
+.chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+.chart svg:focus-visible { outline: 2px solid var(--focus); outline-offset: 4px; border-radius: 4px; }
+.axis text, .tick { fill: var(--muted); font-size: 12px; font-family: var(--font); }
+.endlabel { font-size: 12px; font-family: var(--font); fill: var(--ink-2); }
+.tooltip {
+  position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s); padding: 8px 10px; font-size: 13px; min-width: 200px; box-shadow: 0 4px 14px rgba(0,0,0,.12);
+  opacity: 0; transition: opacity .1s; z-index: 5;
+}
+.tooltip.show { opacity: 1; }
+.tooltip h4 { margin: 0 0 6px; font-size: 13px; font-weight: 600; }
+.tooltip .tr { display: grid; grid-template-columns: 18px 1fr auto; gap: 6px; align-items: center; color: var(--ink-2); }
+.tooltip .tr b { color: var(--ink); font-weight: 600; font-variant-numeric: tabular-nums; }
+.table-toggle { margin-top: 10px; }
+.data-table { margin-top: 10px; overflow-x: auto; max-height: 360px; border: 1px solid var(--line); border-radius: var(--radius-s); }
+.data-table table { border-collapse: collapse; width: 100%; font-size: 13px; }
+.data-table th, .data-table td { padding: 5px 10px; text-align: right; border-bottom: 1px solid var(--line); white-space: nowrap; }
+.data-table thead th { position: sticky; top: 0; background: var(--surface-2); font-weight: 600; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px 24px; margin: 16px 0 4px; }
+.facts div { border-left: 2px solid var(--line-strong); padding-left: 10px; }
+.facts dt { font-size: 13px; color: var(--ink-2); }
+.facts dd { margin: 0; font-size: 16px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.hint.warn { background: var(--warn-bg); border-left: 3px solid var(--warn-line); }
+.scen-pick { display: flex; gap: 8px; align-items: center; font-size: 14px; color: var(--ink-2); }
+.scen-pick select { border: 1px solid var(--line-strong); border-radius: var(--radius-s); padding: 5px 8px; background: var(--page); }
+
+/* ---------- Vigilance et sources ---------- */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+.box { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-m); padding: 18px 20px; }
+.box h2 { font-size: 16px; margin: 0 0 10px; }
+.alerts { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+.alerts li { border-left: 3px solid var(--warn-line); background: var(--warn-bg); padding: 8px 12px; border-radius: 0 var(--radius-s) var(--radius-s) 0; font-size: 14px; }
+.alerts > li .who { display: block; font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+.alerts ul { margin: 0; padding-left: 18px; display: grid; gap: 4px; color: var(--ink-2); }
+.alerts ul li { padding: 0; }
+.mobile-bar { display: none; }
+@media (max-width: 1100px) {
+  .mobile-bar {
+    display: flex; position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; gap: 12px; align-items: center; justify-content: space-between;
+    padding: 10px 16px; background: var(--surface); border-top: 1px solid var(--line-strong); box-shadow: 0 -4px 14px rgba(0,0,0,.08); font-size: 14px;
+  }
+  .mobile-bar strong { display: block; font-size: 16px; }
+  .mobile-bar.hide { display: none; }
+  body { padding-bottom: 70px; }
+}
+.sources { margin: 0; display: grid; gap: 10px; font-size: 14px; }
+.sources dt { font-weight: 600; }
+.sources dd { margin: 0; color: var(--ink-2); }
+.disclaimer { margin-top: 24px; font-size: 13px; color: var(--muted); max-width: 90ch; }
+.about { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); max-width: 78ch; font-size: 14px; color: var(--ink-2); }
+.about h2 { font-size: 16px; color: var(--ink); margin: 0 0 8px; }
+.about h3 { font-size: 14px; color: var(--ink); margin: 16px 0 2px; }
+.about p { margin: 0 0 8px; }
+.about a { color: var(--accent); }
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; }
+  .inputs { position: static; height: auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .results { padding: 20px 16px 48px; }
+  .two-col { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .top { padding: 12px 16px; flex-wrap: wrap; }
+  .rail { grid-template-columns: 1fr; gap: 10px; }
+  .rail::before, .rail::after { display: none; }
+  .stage button { grid-template-columns: 24px 1fr; justify-items: start; text-align: left; column-gap: 10px; }
+  .stage button > *:not(.dot) { grid-column: 2; }
+  .stage .dot { grid-row: span 3; }
+  .perso { grid-template-columns: 1fr 1fr; }
+  .horizon h2 { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+@media print {
+  .inputs, .top-actions, .tabs, .table-toggle { display: none; }
+  .layout { display: block; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-bank" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10M19 21V10M9.5 21V10M14.5 21V10M2.5 10 12 3l9.5 7z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15.5" r="4.5"/><path d="M11.2 12.3 20.5 3M16.5 7l3 3M13.5 10l2 2"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.6a3.5 3.5 0 0 1 0 6.8M18 14.2a6.5 6.5 0 0 1 3.5 5.8"/></symbol>
+  <symbol id="i-trend" viewBox="0 0 24 24"><path d="m3 17 6-6 4 4 8-8M15 7h6v6"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 1 1 9.5 4 6.5 6.5 0 0 0 20 14.5z"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M4 20h16"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v5h5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 4 2.5 20h19zM12 10v4.5M12 17.4v.1"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4h11a3 3 0 0 1 3 3v13H8a3 3 0 0 1-3-3zM5 17a3 3 0 0 1 3-3h11"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 4v16M7 20h10M5 8h14M5 8l-3 6a3 3 0 0 0 6 0zM19 8l-3 6a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24"><path d="M4 5h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1zM3 10h18M8 3v4M16 3v4"/></symbol>
+</svg>
+<header class="top">
+  <div>
+    <h1>Comparateur LMNP, SARL de famille, SCI</h1>
+    <p>Simulateur d'investissement locatif : cinq montages comparés sur la même opération. Textes à jour au <span id="maj"></span>.</p>
+  </div>
+  <div class="top-actions">
+    <button class="btn" id="theme" type="button"><svg class="ico" aria-hidden="true"><use href="#i-moon"/></svg><span id="theme-label">Thème sombre</span></button>
+    <button class="btn" id="csv" type="button"><svg class="ico" aria-hidden="true"><use href="#i-download"/></svg>Exporter en CSV</button>
+    <button class="btn" id="reset" type="button"><svg class="ico" aria-hidden="true"><use href="#i-reset"/></svg>Réinitialiser</button>
+  </div>
+</header>
+
+<div class="layout">
+  <!-- ================= SAISIE ================= -->
+  <aside class="inputs" aria-label="Paramètres de l'opération">
+    <form id="form" autocomplete="off" onsubmit="return false">
+
+      <details class="group" open>
+        <summary><h2><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg>Le bien</h2><span class="sum" id="sum-bien"></span></summary>
+        <div class="group-body">
+          <div class="row2">
+            <div class="field"><label for="f-prix">Prix d'achat</label><div class="input-wrap"><input id="f-prix" type="number" step="1000" min="0" data-path="bien.prix"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-notaire">Frais de notaire</label><div class="input-wrap"><input id="f-notaire" type="number" step="100" min="0" data-path="bien.fraisNotaire"><span class="unit">€</span></div></div>
+          </div>
+          <div class="row2 solo">
+            <div class="field"><label for="f-agence">Frais d'agence</label><div class="input-wrap"><input id="f-agence" type="number" step="100" min="0" data-path="bien.fraisAgence"><span class="unit">€</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-mobilier">Mobilier</label><div class="input-wrap"><input id="f-mobilier" type="number" step="500" min="0" data-path="bien.mobilier"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-terrain">Part du terrain</label><div class="input-wrap"><input id="f-terrain" type="number" step="1" min="0" max="60" data-path="bien.quotePartTerrain" data-pct><span class="unit">%</span></div></div>
+          </div>
+          <p class="sub">Amortissement</p>
+          <div class="row2">
+            <div class="field"><label for="f-dbati">Durée du bâti</label><div class="input-wrap"><input id="f-dbati" type="number" min="10" max="60" data-path="bien.dureeAmortBati"><span class="unit">ans</span></div></div>
+            <div class="field"><label for="f-dmob">Durée du mobilier</label><div class="input-wrap"><input id="f-dmob" type="number" min="3" max="15" data-path="bien.dureeAmortMobilier"><span class="unit">ans</span></div></div>
+          </div>
+          <div class="hint" id="hint-amort" aria-live="polite"></div>
+          <details class="adv">
+            <summary>Travaux et frais d'acquisition</summary>
+            <div class="group-body">
+              <div class="field"><label for="f-travaux">Travaux à réaliser</label><div class="input-wrap"><input id="f-travaux" type="number" step="500" min="0" data-path="bien.travaux"><span class="unit">€</span></div></div>
+              <div class="field">
+                <span class="lbl" id="lbl-travaux">Nature des travaux</span>
+                <div class="seg two" role="radiogroup" aria-labelledby="lbl-travaux">
+                  <label><input type="radio" name="travauxNature" value="amelioration" data-path="bien.travauxNature"><b>Amélioration</b><span>Amortis sur la durée choisie</span></label>
+                  <label><input type="radio" name="travauxNature" value="entretien" data-path="bien.travauxNature"><b>Entretien, réparation</b><span>Déduits l'année 1</span></label>
+                </div>
+              </div>
+              <div class="row2 solo">
+                <div class="field"><label for="f-dtrav">Durée d'amortissement des travaux</label><div class="input-wrap"><input id="f-dtrav" type="number" min="5" max="40" data-path="bien.dureeAmortTravaux"><span class="unit">ans</span></div></div>
+              </div>
+              <div class="row2 solo">
+                <div class="field"><label for="f-facq">Frais d'acquisition</label><div class="input-wrap"><select id="f-facq" data-path="bien.fraisAcquisitionMode"><option value="amortis">Amortis avec le bâti</option><option value="charges">Déduits l'année 1</option></select></div></div>
+              </div>
+            </div>
+          </details>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary><h2><svg class="ico" aria-hidden="true"><use href="#i-bank"/></svg>Financement</h2><span class="sum" id="sum-pret"></span></summary>
+        <div class="group-body">
+          <div class="row2">
+            <div class="field"><label for="f-apport">Apport</label><div class="input-wrap"><input id="f-apport" type="number" step="1000" min="0" data-path="pret.apport"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-duree">Durée</label><div class="input-wrap"><input id="f-duree" type="number" min="5" max="30" data-path="pret.dureeAns"><span class="unit">ans</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-taux">Taux du crédit</label><div class="input-wrap"><input id="f-taux" type="number" step="0.05" min="0" max="10" data-path="pret.taux" data-pct><span class="unit">%</span></div></div>
+            <div class="field"><label for="f-assu">Assurance emprunteur</label><div class="input-wrap"><input id="f-assu" type="number" step="0.01" min="0" max="1" data-path="pret.tauxAssurance" data-pct><span class="unit">%/an</span></div></div>
+          </div>
+          <div class="field"><label for="f-dossier">Frais de dossier et garantie</label><div class="input-wrap"><input id="f-dossier" type="number" step="100" min="0" data-path="pret.fraisDossierGarantie"><span class="unit">€</span></div></div>
+          <div class="hint" id="hint-pret" aria-live="polite"></div>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary><h2><svg class="ico" aria-hidden="true"><use href="#i-key"/></svg>Location</h2><span class="sum" id="sum-loc"></span></summary>
+        <div class="group-body">
+          <div class="field">
+            <span class="lbl" id="lbl-type">Type de location meublée</span>
+            <div class="seg" role="radiogroup" aria-labelledby="lbl-type">
+              <label><input type="radio" name="type" value="tourisme_non_classe" data-path="location.type"><b>Tourisme non classé</b><span>Courte durée, Airbnb</span></label>
+              <label><input type="radio" name="type" value="tourisme_classe" data-path="location.type"><b>Tourisme classé</b><span>Courte durée, classement étoiles</span></label>
+              <label><input type="radio" name="type" value="longue_habitation" data-path="location.type"><b>Bail d'habitation</b><span>Résidence principale du locataire</span></label>
+              <label><input type="radio" name="type" value="bail_mobilite" data-path="location.type"><b>Bail mobilité</b><span>De 1 à 10 mois</span></label>
+            </div>
+          </div>
+          <p class="sub" data-show="courte">Courte durée : recettes = prix par nuit × 365 × taux d'occupation</p>
+          <div class="row2" data-show="courte">
+            <div class="field"><label for="f-nuit">Prix moyen par nuit</label><div class="input-wrap"><input id="f-nuit" type="number" step="5" min="0" data-path="location.prixNuit"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-occ">Taux d'occupation</label><div class="input-wrap"><input id="f-occ" type="number" step="1" min="0" max="100" data-path="location.tauxOccupation" data-pct><span class="unit">%</span></div></div>
+          </div>
+          <p class="sub" data-show="longue">Longue durée : recettes = loyer × (12 − mois de vacance)</p>
+          <div class="row2" data-show="longue">
+            <div class="field"><label for="f-loyer">Loyer meublé hors charges</label><div class="input-wrap"><input id="f-loyer" type="number" step="10" min="0" data-path="location.loyerMensuel"><span class="unit">€/mois</span></div></div>
+            <div class="field"><label for="f-vac">Vacance locative</label><div class="input-wrap"><input id="f-vac" type="number" step="0.5" min="0" max="12" data-path="location.vacanceMois"><span class="unit">mois/an</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-gest"><span id="lbl-gest">Conciergerie et plateforme</span></label><div class="input-wrap"><input id="f-gest" type="number" step="1" min="0" max="50" data-path="location.fraisGestionPct" data-pct><span class="unit">% des recettes</span></div></div>
+            <div class="field"><label for="f-rloy">Hausse annuelle des recettes</label><div class="input-wrap"><input id="f-rloy" type="number" step="0.1" min="-5" max="10" data-path="location.revalorisationLoyer" data-pct><span class="unit">%</span></div></div>
+          </div>
+          <div class="hint" id="hint-loc" aria-live="polite"></div>
+          <p class="sub">Loyer en location nue, utilisé seulement par le scénario SCI à l'IR</p>
+          <div class="row2">
+            <div class="field"><label for="f-nu">Loyer nu hors charges</label><div class="input-wrap"><input id="f-nu" type="number" step="10" min="0" data-path="location.loyerNuMensuel"><span class="unit">€/mois</span></div></div>
+            <div class="field"><label for="f-gnu">Gestion locative</label><div class="input-wrap"><input id="f-gnu" type="number" step="0.5" min="0" max="20" data-path="location.fraisGestionNuPct" data-pct><span class="unit">%</span></div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary><h2><svg class="ico" aria-hidden="true"><use href="#i-receipt"/></svg>Charges annuelles</h2><span class="sum" id="sum-charges"></span></summary>
+        <div class="group-body">
+          <div class="row2">
+            <div class="field"><label for="f-tf">Taxe foncière</label><div class="input-wrap"><input id="f-tf" type="number" step="50" min="0" data-path="charges.taxeFonciere"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-copro">Charges de copropriété</label><div class="input-wrap"><input id="f-copro" type="number" step="50" min="0" data-path="charges.copro"><span class="unit">€</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-recup">Part récupérable sur le locataire</label><div class="input-wrap"><input id="f-recup" type="number" step="5" min="0" max="100" data-path="charges.coproRecuperablePct" data-pct><span class="unit">%</span></div></div>
+            <div class="field"><label for="f-pno">Assurance PNO</label><div class="input-wrap"><input id="f-pno" type="number" step="10" min="0" data-path="charges.assurancePNO"><span class="unit">€</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-entr">Entretien courant</label><div class="input-wrap"><input id="f-entr" type="number" step="50" min="0" data-path="charges.entretien"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-cfe">CFE en année pleine</label><div class="input-wrap"><input id="f-cfe" type="number" step="50" min="0" data-path="charges.cfe"><span class="unit">€</span></div></div>
+          </div>
+          <div class="hint">CFE : environ 2 × la base de l'avis de taxe foncière × le taux de CFE de l'intercommunalité × 1,03. Elle n'est pas due l'année de création et sa base est réduite de moitié l'année suivante : le simulateur l'applique ainsi. Location nue non concernée.</div>
+          <p class="sub" data-show="courte">À votre charge en courte durée</p>
+          <div class="row2" data-show="courte">
+            <div class="field"><label for="f-nrj">Électricité et eau</label><div class="input-wrap"><input id="f-nrj" type="number" step="50" min="0" data-path="charges.energie"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-net">Abonnement internet</label><div class="input-wrap"><input id="f-net" type="number" step="10" min="0" data-path="charges.internet"><span class="unit">€</span></div></div>
+          </div>
+          <div class="field" data-show="courte"><label for="f-ccd">Linge et consommables</label><div class="input-wrap"><input id="f-ccd" type="number" step="50" min="0" data-path="charges.chargesCourteDuree"><span class="unit">€</span></div></div>
+          <p class="sub">Frais de structure</p>
+          <div class="row2">
+            <div class="field"><label for="f-cptl">Expert-comptable LMNP</label><div class="input-wrap"><input id="f-cptl" type="number" step="50" min="0" data-path="charges.comptableLmnp"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-cpts">Expert-comptable société</label><div class="input-wrap"><input id="f-cpts" type="number" step="50" min="0" data-path="charges.comptableSociete"><span class="unit">€</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-fsoc">Autres frais de société</label><div class="input-wrap"><input id="f-fsoc" type="number" step="50" min="0" data-path="charges.fraisSocieteAnnuels"><span class="unit">€</span></div></div>
+            <div class="field"><label for="f-rch">Hausse annuelle des charges</label><div class="input-wrap"><input id="f-rch" type="number" step="0.1" min="-5" max="10" data-path="charges.revalorisationCharges" data-pct><span class="unit">%</span></div></div>
+          </div>
+        </div>
+      </details>
+
+      <details class="group" open>
+        <summary><h2><svg class="ico" aria-hidden="true"><use href="#i-users"/></svg>Votre foyer fiscal</h2><span class="sum" id="sum-foyer"></span></summary>
+        <div class="group-body">
+          <div class="field"><label for="f-rev">Revenu net imposable, hors cette location</label><div class="input-wrap"><input id="f-rev" type="number" step="1000" min="0" data-path="foyer.revenuImposable"><span class="unit">€/an</span></div></div>
+          <div class="row2">
+            <div class="field"><label for="f-sit">Situation</label><div class="input-wrap"><select id="f-sit" data-path="foyer.partsBase"><option value="1">Personne seule</option><option value="2">Couple marié ou pacsé</option></select></div></div>
+            <div class="field"><label for="f-parts">Nombre de parts</label><div class="input-wrap"><input id="f-parts" type="number" step="0.5" min="1" max="10" data-path="foyer.parts"><span class="unit">parts</span></div></div>
+          </div>
+          <div class="field"><label for="f-qp">Part du bien détenue par votre foyer</label><div class="input-wrap"><input id="f-qp" type="number" step="5" min="1" max="100" data-path="partFoyer" data-pct><span class="unit">%</span></div></div>
+          <div class="field"><label for="f-soc">Régime social si les recettes de courte durée dépassent 23 000 €</label><div class="input-wrap"><select id="f-soc" data-path="social.regime"><option value="ssi">Indépendant : cotisations sur le bénéfice</option><option value="general">Régime général : cotisations sur les recettes</option></select></div></div>
+          <label class="check"><input type="checkbox" data-path="social.dejaIndependant"><span>Le loueur est déjà travailleur indépendant<small>Pas de cotisation minimale supplémentaire, à confirmer auprès de l'URSSAF</small></span></label>
+          <div class="hint" id="hint-foyer" aria-live="polite"></div>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary><h2><svg class="ico" aria-hidden="true"><use href="#i-trend"/></svg>Revente et hypothèses</h2><span class="sum" id="sum-rev"></span></summary>
+        <div class="group-body">
+          <div class="row2">
+            <div class="field"><label for="f-acq">Année d'acquisition</label><div class="input-wrap"><input id="f-acq" type="number" min="2025" max="2035" data-path="anneeAcquisition"></div></div>
+            <div class="field"><label for="f-hor">Durée simulée</label><div class="input-wrap"><input id="f-hor" type="number" min="3" max="35" data-path="horizon"><span class="unit">ans</span></div></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-rbien">Hausse annuelle du prix du bien</label><div class="input-wrap"><input id="f-rbien" type="number" step="0.1" min="-5" max="10" data-path="revente.revalorisationBien" data-pct><span class="unit">%</span></div></div>
+            <div class="field"><label for="f-fvente">Frais de vente</label><div class="input-wrap"><input id="f-fvente" type="number" step="0.5" min="0" max="10" data-path="revente.fraisVentePct" data-pct><span class="unit">%</span></div></div>
+          </div>
+          <label class="check"><input type="checkbox" data-path="fiscal.abattementPVTravauxForfait"><span>Forfait travaux de 15 % sur la plus-value<small>Après 5 ans de détention, si plus favorable que les travaux réels</small></span></label>
+          <label class="check"><input type="checkbox" data-path="sciIs.distribuer"><span>SCI à l'IS : distribuer les bénéfices chaque année<small>Sinon la trésorerie reste dans la société jusqu'à la revente</small></span></label>
+        </div>
+      </details>
+    </form>
+  </aside>
+
+  <!-- ================= RÉSULTATS ================= -->
+  <main class="results">
+    <section class="law" aria-labelledby="law-title">
+      <div class="law-head">
+        <div>
+          <h2 id="law-title" class="with-ico"><svg class="ico" aria-hidden="true"><use href="#i-scale"/></svg>Article 7 du projet de loi de finances 2027</h2>
+          <p>Il plafonne l'amortissement en LMNP et en SARL de famille. Choisissez l'étape du vote à simuler : les scénarios SCI ne sont pas concernés.</p>
+        </div>
+      </div>
+      <ol class="rail" id="rail"></ol>
+      <div class="law-detail" id="law-detail"></div>
+      <div class="perso" id="perso" hidden>
+        <div class="field"><label for="p-tc">Taux plafond, location classique</label><div class="input-wrap"><input id="p-tc" type="number" step="0.1" min="0" data-perso="classique.plafondTaux" data-pct><span class="unit">%</span></div></div>
+        <div class="field"><label for="p-mc">Plafond, location classique</label><div class="input-wrap"><input id="p-mc" type="number" step="500" min="0" data-perso="classique.plafondMontant"><span class="unit">€</span></div></div>
+        <div class="field"><label for="p-tt">Taux plafond, tourisme</label><div class="input-wrap"><input id="p-tt" type="number" step="0.1" min="0" data-perso="tourisme.plafondTaux" data-pct><span class="unit">%</span></div></div>
+        <div class="field"><label for="p-mt">Plafond, tourisme</label><div class="input-wrap"><input id="p-mt" type="number" step="500" min="0" data-perso="tourisme.plafondMontant"><span class="unit">€</span></div></div>
+        <label class="check"><input type="checkbox" data-perso="exclureLongueDuree"><span>Exclure bail d'habitation et bail mobilité</span></label>
+        <label class="check"><input type="checkbox" data-perso="reportSupprime"><span>Amortissement non déduit perdu</span></label>
+        <label class="check"><input type="checkbox" data-perso="tourismeSansAmort"><span>Plus d'amortissement pour un meublé de tourisme acquis à partir de 2027</span></label>
+      </div>
+    </section>
+
+    <section class="year1" aria-labelledby="h-y1">
+      <h2 id="h-y1" class="with-ico"><svg class="ico" aria-hidden="true"><use href="#i-calendar"/></svg>La première année, en LMNP au réel</h2>
+      <dl class="kpis" id="kpis"></dl>
+    </section>
+
+    <section aria-labelledby="h-horizon">
+      <div class="horizon">
+        <h2 id="h-horizon">Si je revends au bout de <output id="out-n">10</output> ans</h2>
+        <input type="range" id="sell" min="1" max="25" value="10" aria-labelledby="h-horizon">
+        <span class="yr" id="sell-year"></span>
+      </div>
+      <div class="compare-wrap"><table class="compare" id="compare"></table></div>
+    </section>
+
+    <section class="panel" aria-label="Graphiques">
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="chart-body" id="chart-body" role="tabpanel"></div>
+    </section>
+
+    <div class="two-col">
+      <section class="box" aria-labelledby="h-alerts">
+        <h2 id="h-alerts" class="with-ico"><svg class="ico" aria-hidden="true"><use href="#i-alert"/></svg>Points de vigilance</h2>
+        <ul class="alerts" id="alerts"></ul>
+      </section>
+      <section class="box" aria-labelledby="h-src">
+        <h2 id="h-src" class="with-ico"><svg class="ico" aria-hidden="true"><use href="#i-book"/></svg>Textes appliqués</h2>
+        <dl class="sources" id="sources"></dl>
+      </section>
+    </div>
+    <p class="disclaimer">Simulation indicative. Barème de l'impôt 2026 sans décote ni réduction d'impôt, appliqué sans évolution sur toute la durée. L'article 7 est en cours d'examen au Parlement et peut encore changer. Ce simulateur ne remplace pas l'avis d'un expert-comptable.</p>
+    <section class="about" aria-labelledby="h-about">
+      <h2 id="h-about">À propos de ce comparateur</h2>
+      <p>Ce simulateur gratuit compare cinq façons de détenir un bien locatif en France : LMNP au micro-BIC, LMNP au réel, SARL de famille à l'impôt sur le revenu, SCI à l'IR en location nue et SCI à l'IS. Il calcule année par année le cash-flow, l'amortissement, les impôts et ce qui vous revient à la revente, en location courte durée (Airbnb, meublé de tourisme) comme en longue durée.</p>
+      <h3>Quelles données sont collectées ?</h3>
+      <p>Aucune. Tous les calculs se font dans votre navigateur, sans inscription ni envoi de données. Vos paramètres sont mémorisés sur votre appareil uniquement.</p>
+      <h3>Sur quels textes repose le calcul ?</h3>
+      <p>Chaque règle cite sa source dans « Textes appliqués » : barème de l'impôt 2026, loi de finances 2025 pour la réintégration des amortissements dans la plus-value, loi Le Meur pour le micro-BIC, et les versions successives de l'article 7 du projet de loi de finances 2027 sur le plafonnement de l'amortissement en LMNP.</p>
+      <h3>Peut-on s'y fier pour décider ?</h3>
+      <p>C'est une aide à la réflexion, pas un conseil fiscal. Certains paramètres sont des ordres de grandeur et des textes sont encore en cours de vote. Faites valider votre projet par un expert-comptable.</p>
+      <p>Code source ouvert sous licence MIT : <a href="https://github.com/jhedider/comparateur-lmnp-sarlf-sci">github.com/jhedider/comparateur-lmnp-sarlf-sci</a>.</p>
+    </section>
+  </main>
+</div>
+
+<div class="mobile-bar" id="mobile-bar" aria-live="polite">
+  <div id="mb-text"></div>
+  <a class="btn btn-primary" href="#h-horizon" style="text-decoration:none">Voir les résultats</a>
+</div>
+
+<script src="src/regimes.js"></script>
+<script src="src/engine.js"></script>
+<script src="src/help.js"></script>
+<script>
+(function () {
+  'use strict';
+  var R = window.Regimes, S = window.SimLoc;
+  var IDS = ['lmnp_micro', 'lmnp_reel', 'sarl_famille', 'sci_ir', 'sci_is'];
+  var NOMS = { lmnp_micro: 'LMNP micro-BIC', lmnp_reel: 'LMNP réel', sarl_famille: 'SARL de famille', sci_ir: 'SCI à l\'IR', sci_is: 'SCI à l\'IS' };
+  var DASH = { lmnp_micro: '', lmnp_reel: '', sarl_famille: '6 3', sci_ir: '2 3', sci_is: '8 3 2 3' };
+  var COLOR = { lmnp_micro: 'var(--s1)', lmnp_reel: 'var(--s2)', sarl_famille: 'var(--s3)', sci_ir: 'var(--s4)', sci_is: 'var(--s5)' };
+  var STORE = 'simloc.v1';
+
+  // ------------------------------------------------------------------ état
+  var state = {
+    params: S.defaultParams(),
+    sell: 10,
+    tab: 'enrichissement',
+    hidden: {},
+    focusScen: 'lmnp_reel',
+    showTable: false
+  };
+  try {
+    var saved = JSON.parse(localStorage.getItem(STORE) || 'null');
+    if (saved && saved.params && saved.params.charges && saved.params.charges.energie == null && saved.params.charges.chargesCourteDuree != null) {
+      saved.params.charges.chargesCourteDuree = Math.max(0, saved.params.charges.chargesCourteDuree - 1260);
+    }
+    if (saved && saved.params) { state.params = S.deepMerge(S.defaultParams(), saved.params); state.sell = saved.sell || 10; state.tab = saved.tab || state.tab; }
+  } catch (e) {}
+  function persist() { try { localStorage.setItem(STORE, JSON.stringify({ params: state.params, sell: state.sell, tab: state.tab })); } catch (e) {} }
+
+  // ------------------------------------------------------------------ format
+  var fmtE = new Intl.NumberFormat('fr-FR', { maximumFractionDigits: 0 });
+  function eur(v) { var r = Math.round(v) || 0; return (r < 0 ? '−' : '') + fmtE.format(Math.abs(r)) + ' €'; }
+  function eurK(v) { var a = Math.abs(v); var s = a >= 1e6 ? (a / 1e6).toFixed(1).replace('.', ',') + ' M€' : a >= 1e4 ? Math.round(a / 1000) + ' k€' : a >= 1000 ? (a / 1000).toFixed(1).replace('.', ',') + ' k€' : Math.round(a) + ' €'; return (v < 0 ? '−' : '') + s; }
+  function pct(v, d) { if (v == null || !isFinite(v)) return '—'; return (v < 0 ? '−' : '') + Math.abs(v * 100).toFixed(d == null ? 1 : d).replace('.', ',') + ' %'; }
+  function get(o, path) { return path.split('.').reduce(function (a, k) { return a == null ? a : a[k]; }, o); }
+  function set(o, path, v) { var ks = path.split('.'), last = ks.pop(); var t = ks.reduce(function (a, k) { return a[k] = a[k] || {}; }, o); t[last] = v; }
+  function $(s, r) { return (r || document).querySelector(s); }
+  function $$(s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+
+  // ------------------------------------------------------------------ formulaire
+  function fillForm() {
+    $$('[data-path]').forEach(function (el) {
+      var v = get(state.params, el.dataset.path);
+      if (el.type === 'radio') el.checked = String(v) === el.value;
+      else if (el.type === 'checkbox') el.checked = !!v;
+      else if (el.hasAttribute('data-pct')) el.value = +(v * 100).toFixed(4);
+      else el.value = v;
+    });
+    fillPerso();
+  }
+  function readField(el) {
+    var path = el.dataset.path, v;
+    if (el.type === 'radio') { if (!el.checked) return; v = el.value; }
+    else if (el.type === 'checkbox') v = el.checked;
+    else if (el.tagName === 'SELECT') v = isNaN(+el.value) ? el.value : +el.value;
+    else { v = parseFloat(String(el.value).replace(',', '.')); if (!isFinite(v)) return; if (el.hasAttribute('data-pct')) v = v / 100; }
+    set(state.params, path, v);
+  }
+  $('#form').addEventListener('input', function (e) { if (e.target.dataset.path) { readField(e.target); schedule(); } });
+  $('#form').addEventListener('change', function (e) { if (e.target.dataset.path) { readField(e.target); schedule(); } });
+
+  // Article 7 personnalisé
+  function persoObj() {
+    var base = R.ARTICLE7_VERSIONS.personnalise;
+    return S.deepMerge(base, state.params.fiscal.article7Perso || {});
+  }
+  function fillPerso() {
+    var p = persoObj();
+    $$('[data-perso]').forEach(function (el) {
+      var k = el.dataset.perso;
+      if (k === 'tourismeSansAmort') { el.checked = !!p.tourismeSansAmortSiAcquisDes; return; }
+      var v = get(p, k);
+      if (el.type === 'checkbox') el.checked = !!v;
+      else el.value = el.hasAttribute('data-pct') ? +(v * 100).toFixed(3) : v;
+    });
+  }
+  $('#perso').addEventListener('input', function (e) {
+    var el = e.target, k = el.dataset.perso; if (!k) return;
+    var o = state.params.fiscal.article7Perso = state.params.fiscal.article7Perso || {};
+    if (k === 'tourismeSansAmort') o.tourismeSansAmortSiAcquisDes = el.checked ? 2027 : null;
+    else if (el.type === 'checkbox') o[k] = el.checked;
+    else { var v = parseFloat(el.value); if (!isFinite(v)) return; set(o, k, el.hasAttribute('data-pct') ? v / 100 : v); }
+    schedule();
+  });
+
+  // ------------------------------------------------------------------ frise législative
+  var STAGES = [
+    { id: 'actuel', name: 'Droit actuel', date: 'en vigueur', what: 'Amortissement non plafonné, excédent reportable' },
+    { id: 'initial', name: 'Texte initial', date: '1er oct. 2026', what: '2,5 % et 7 000 €, tourisme 1,5 % et 5 000 €' },
+    { id: 'commission', name: 'Commission des finances', date: '8 oct. 2026', what: 'Longue durée exclue, tourisme acquis dès 2027 non amortissable' },
+    { id: 'assemblee', name: 'Séance à l\'Assemblée', date: '30 oct. 2026', what: 'Plafonnement supprimé, mais budget rejeté le 4 nov.' },
+    { id: null, name: 'Sénat', date: 'dès le 20 nov. 2026', what: 'Repart du texte initial, vote le 9 déc.', future: true },
+    { id: null, name: 'Commission mixte paritaire', date: 'mi-déc. 2026', what: 'À venir', future: true },
+    { id: 'personnalise', name: 'Votre hypothèse', date: 'personnalisée', what: 'Saisissez les plafonds' }
+  ];
+  function renderRail() {
+    var cur = state.params.fiscal.article7Version;
+    $('#rail').innerHTML = STAGES.map(function (s) {
+      var cls = 'stage' + (s.future ? ' future' : '') + (s.id === cur ? ' selected' : '');
+      var inner = '<span class="dot" aria-hidden="true"></span><span class="st-name">' + esc(s.name) + '</span><span class="st-date">' + esc(s.date) + '</span><span class="st-what">' + esc(s.what) + '</span>';
+      if (!s.id) return '<li class="' + cls + '"><div class="stage-static" style="display:grid;justify-items:center;gap:6px;padding:0 2px 4px">' + inner + '</div></li>';
+      return '<li class="' + cls + '"><button type="button" data-stage="' + s.id + '" aria-pressed="' + (s.id === cur) + '">' + inner + '</button></li>';
+    }).join('');
+    $('#perso').hidden = cur !== 'personnalise';
+  }
+  $('#rail').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-stage]'); if (!b) return;
+    state.params.fiscal.article7Version = b.dataset.stage; renderRail(); schedule();
+  });
+
+  // ------------------------------------------------------------------ calcul
+  var timer = null, res = null;
+  function schedule() { clearTimeout(timer); timer = setTimeout(run, 60); }
+  function run() {
+    res = S.simuler(state.params);
+    var H = res.params.horizon;
+    var sl = $('#sell'); sl.max = H; if (state.sell > H) state.sell = H; sl.value = state.sell;
+    renderHints(); renderKpis(); renderLawDetail(); renderCompare(); renderChart(); renderAlerts(); renderSources();
+    persist();
+  }
+
+  function renderHints() {
+    var p = res.params, b = p.bien, s = res.scenarios.lmnp_reel, pret = s.pret;
+    var cout = b.prix + b.fraisNotaire + b.fraisAgence + b.travaux + b.mobilier + p.pret.fraisDossierGarantie;
+    $('#sum-bien').textContent = eurK(cout) + ' au total';
+    var BA = S.basesAmortissement(p), aB = BA.bati.duree > 0 ? BA.bati.base / BA.bati.duree : 0, aM = BA.mobilier.duree > 0 ? BA.mobilier.base / BA.mobilier.duree : 0, aT = BA.travaux.duree > 0 ? BA.travaux.base / BA.travaux.duree : 0;
+    $('#hint-amort').innerHTML = 'Amortissement annuel : <strong>' + eur(aB + aM + aT) + '</strong>, dont ' + eur(aB) + ' pour le bâti pendant ' + BA.bati.duree + ' ans et ' + eur(aM) + ' pour le mobilier pendant ' + BA.mobilier.duree + ' ans' + (aT > 0 ? ', ' + eur(aT) + ' pour les travaux' : '') + '. Le terrain (' + pct(b.quotePartTerrain, 0) + ' du prix) ne s\'amortit pas.';
+    $('#hint-pret').innerHTML = 'Montant emprunté <strong>' + eur(pret.montant) + '</strong>, mensualité <strong>' + eur(pret.mensualite + pret.assuranceMensuelle) + '</strong> assurance comprise.';
+    $('#sum-pret').textContent = eur(pret.mensualite + pret.assuranceMensuelle) + '/mois';
+    var T = R.TYPES_LOCATION[p.location.type];
+    $$('[data-show=courte]').forEach(function (el) { el.hidden = !T.tourisme; });
+    $$('[data-show=longue]').forEach(function (el) { el.hidden = T.tourisme; });
+    $('#lbl-gest').textContent = T.tourisme ? 'Conciergerie et plateforme' : 'Gestion locative';
+    var rec = s.annees[0].recettes / p.partFoyer;
+    var mb = R.MICRO_BIC[p.location.type];
+    $('#hint-loc').innerHTML = '<span class="big">' + eur(rec) + ' par an</span>Recettes de la première année, soit ' + eur(rec / 12) + ' par mois' +
+      (T.tourisme ? ' (' + Math.round(365 * p.location.tauxOccupation) + ' nuits louées)' : '') +
+      '. Seuil micro-BIC pour ce type : ' + eur(mb.seuil) + ', abattement ' + Math.round(mb.abattement * 100) + ' %.';
+    var seuilSoc = R.SOCIAL.seuilCourteDuree, depasse = T.tourisme && rec * p.partFoyer > seuilSoc;
+    $('#hint-loc').classList.toggle('warn', depasse);
+    if (depasse) $('#hint-loc').innerHTML += ' <strong>Au-delà de ' + eur(seuilSoc) + ' de recettes de courte durée, des cotisations sociales sont dues : elles sont estimées selon le régime social choisi dans « Votre foyer fiscal ».</strong>';
+    $('#sum-loc').textContent = T.libelle.split(' (')[0];
+    var ch = p.charges;
+    $('#sum-charges').textContent = eurK(ch.taxeFonciere + ch.copro + ch.assurancePNO + ch.entretien + ch.cfe + (T.tourisme ? ch.chargesCourteDuree + (ch.energie || 0) + (ch.internet || 0) : 0)) + '/an';
+    $('#hint-foyer').innerHTML = 'Tranche marginale d\'imposition actuelle : <strong>' + Math.round(res.tmi * 100) + ' %</strong>. L\'impôt est recalculé au barème avec les revenus locatifs, donc un changement de tranche est pris en compte.';
+    $('#sum-foyer').textContent = 'TMI ' + Math.round(res.tmi * 100) + ' %';
+    $('#sum-rev').textContent = p.horizon + ' ans simulés';
+  }
+
+  function renderKpis() {
+    var s = res.scenarios.lmnp_reel, a = s.annees[0], part = res.params.partFoyer;
+    var annuite = s.pret.annees.length ? (s.pret.annees[0].interets + s.pret.annees[0].capital + s.pret.annees[0].assurance) * part : 0;
+    var charges = a.recettes - annuite - a.cfai;
+    var items = [
+      ['Recettes annuelles', eur(a.recettes), eur(a.recettes / 12) + ' par mois'],
+      ['Charges et frais de gestion', eur(charges), 'hors crédit, ' + pct(a.recettes > 0 ? charges / a.recettes : 0, 0) + ' des recettes'],
+      ['Remboursement du prêt', eur(annuite), eur(annuite / 12) + ' par mois, assurance comprise'],
+      ['Cash-flow avant impôt', eur(a.cfai), eur(a.cfai / 12) + ' par mois'],
+      ['Impôts et cotisations', eur(a.impot.total), 'cash-flow net : ' + eur(a.cf / 12) + ' par mois']
+    ];
+    $('#kpis').innerHTML = items.map(function (i, k) { return '<div><dt>' + i[0] + '</dt><dd' + (k >= 3 && k === 3 && a.cfai < 0 ? ' class="neg"' : '') + '>' + i[1] + '<small>' + i[2] + '</small></dd></div>'; }).join('');
+  }
+
+  function renderLawDetail() {
+    var v = res.article7, p = res.params, T = R.TYPES_LOCATION[p.location.type];
+    var txt;
+    if (!v.actif) txt = 'Pas de plafonnement : l\'amortissement est limité au résultat et l\'excédent est reporté sans limite de durée.';
+    else if (v.exclureLongueDuree && T.longue) txt = 'Votre type de location (' + T.libelle.toLowerCase() + ') est exclu du plafonnement dans cette version.';
+    else {
+      var pl = T.tourisme ? v.tourisme : v.classique;
+      txt = 'Pour votre bien : amortissement des locaux plafonné à ' + pct(pl.plafondTaux) + ' de la base et ' + eur(pl.plafondMontant) + ' par an et par foyer, à partir de ' + v.anneeEffet + '.';
+      if (T.tourisme && v.tourismeSansAmortSiAcquisDes && p.anneeAcquisition >= v.tourismeSansAmortSiAcquisDes) txt = 'Meublé de tourisme acquis en ' + p.anneeAcquisition + ' : plus d\'amortissement des locaux dans cette version (le mobilier reste amortissable).';
+      if (v.reportSupprime) txt += ' L\'amortissement non déduit est perdu.';
+    }
+    var perdu = res.scenarios.lmnp_reel.annees.reduce(function (s, a) { return s + a.amortissementPerdu; }, 0);
+    $('#law-detail').innerHTML = '<span>' + esc(txt) + '</span>' + (perdu > 1 ? '<span>Amortissement perdu en LMNP réel sur ' + p.horizon + ' ans : <strong>' + eur(perdu) + '</strong></span>' : '');
+  }
+
+  // ------------------------------------------------------------------ tableau comparatif
+  function renderCompare() {
+    var n = state.sell, p = res.params;
+    $('#out-n').textContent = n;
+    $('#sell-year').textContent = 'fin ' + (p.anneeAcquisition + n - 1);
+    var rows = [
+      { key: 'effort', label: 'Effort d\'épargne mensuel moyen', help: 'Ce que vous ajoutez chaque mois, impôts compris', val: function (s) { var a = s.annees.slice(0, n); return -a.reduce(function (t, y) { return t + y.cf; }, 0) / n / 12; }, fmt: eur, better: 'min' },
+      { key: 'impots', label: 'Impôts payés pendant la location', help: 'IR, prélèvements ou cotisations sociales, IS et PFU', val: function (s) { return s.annees[n - 1].impotsCumules; }, fmt: eur, better: 'min' },
+      { key: 'pv', label: 'Impôt à la revente', help: 'Plus-value, ou IS et PFU sur le boni en SCI à l\'IS', val: function (s) { return s.annees[n - 1].revente.impot; }, fmt: eur, better: 'min' },
+      { key: 'net', label: 'Ce qui vous revient à la vente', help: 'Prix net vendeur, moins le capital restant dû et l\'impôt', val: function (s) { return s.annees[n - 1].revente.net; }, fmt: eur, better: 'max' },
+      { key: 'enrich', label: 'Enrichissement net', help: 'Ce qui vous revient, plus les cash-flows cumulés, moins l\'apport', val: function (s) { return s.annees[n - 1].enrichissement; }, fmt: eur, better: 'max', strong: true },
+      { key: 'tri', label: 'Taux de rendement interne', help: 'Rendement annuel de votre apport et de votre épargne', val: function (s) { return s.annees[n - 1].tri; }, fmt: function (v) { return pct(v); }, better: 'max', strong: true }
+    ];
+    var head = '<thead><tr><th scope="col"></th>' + IDS.map(function (id) {
+      return '<th scope="col"><span class="sw" style="background:' + COLOR[id] + '"></span>' + NOMS[id] + '</th>';
+    }).join('') + '</tr></thead>';
+    var body = rows.map(function (r) {
+      var vals = IDS.map(function (id) { var s = res.scenarios[id]; return s.eligible ? r.val(s) : null; });
+      var cand = vals.filter(function (v) { return v != null && isFinite(v); });
+      var best = cand.length ? (r.better === 'max' ? Math.max.apply(null, cand) : Math.min.apply(null, cand)) : null;
+      return '<tr class="' + (r.strong ? 'key' : '') + '"><th scope="row">' + r.label + '<small>' + r.help + '</small></th>' + IDS.map(function (id, i) {
+        var s = res.scenarios[id], v = r.val(s);
+        var cls = [];
+        if (!s.eligible) cls.push('off');
+        else if (best != null && Math.abs(v - best) < (r.key === 'tri' ? 1e-5 : 0.5) && cand.length > 1) cls.push('best');
+        if (r.key === 'enrich' && v < 0) cls.push('neg');
+        var flag = (!s.eligible && r.key === 'effort') ? '<span class="flag">Seuil micro-BIC dépassé</span>' : '';
+        return '<td class="' + cls.join(' ') + '">' + flag + r.fmt(v) + '</td>';
+      }).join('') + '</tr>';
+    }).join('');
+    var bestId = null, bestV = -Infinity;
+    IDS.forEach(function (id) { var s = res.scenarios[id]; if (s.eligible && s.annees[n - 1].enrichissement > bestV) { bestV = s.annees[n - 1].enrichissement; bestId = id; } });
+    $('#mb-text').innerHTML = 'Revente après ' + n + ' ans<strong>' + NOMS[bestId] + ' : ' + eur(bestV) + '</strong>';
+    $('#compare').innerHTML = '<caption class="sr-only" style="position:absolute;left:-9999px">Comparaison des scénarios pour une revente après ' + n + ' ans</caption>' + head + '<tbody>' + body + '</tbody>';
+  }
+  $('#sell').addEventListener('input', function (e) { state.sell = +e.target.value; renderCompare(); renderChart(); persist(); });
+
+  // ------------------------------------------------------------------ graphiques
+  var TABS = [
+    { id: 'enrichissement', name: 'Enrichissement selon l\'année de revente' },
+    { id: 'cf', name: 'Cash-flow annuel' },
+    { id: 'resultat', name: 'Recettes et résultat' },
+    { id: 'tri', name: 'Rendement selon l\'année de revente' },
+    { id: 'impots', name: 'Impôts cumulés' },
+    { id: 'amort', name: 'Amortissements' },
+    { id: 'pret', name: 'Prêt' },
+    { id: 'sensib', name: 'Sensibilité' }
+  ];
+  function renderTabs() {
+    $('#tabs').innerHTML = TABS.map(function (t) {
+      return '<button role="tab" id="tab-' + t.id + '" aria-selected="' + (t.id === state.tab) + '" tabindex="' + (t.id === state.tab ? 0 : -1) + '" data-tab="' + t.id + '">' + t.name + '</button>';
+    }).join('');
+  }
+  $('#tabs').addEventListener('click', function (e) { var b = e.target.closest('[data-tab]'); if (!b) return; state.tab = b.dataset.tab; renderTabs(); renderChart(); persist(); });
+  $('#tabs').addEventListener('keydown', function (e) {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+    var i = TABS.findIndex(function (t) { return t.id === state.tab; });
+    i = (i + (e.key === 'ArrowRight' ? 1 : TABS.length - 1)) % TABS.length;
+    state.tab = TABS[i].id; renderTabs(); renderChart(); $('#tab-' + state.tab).focus(); persist();
+  });
+
+  function seriesFor(fn) {
+    return IDS.map(function (id) { return { id: id, short: NOMS[id], name: NOMS[id] + (res.scenarios[id].eligible ? '' : ' (seuil dépassé)'), color: COLOR[id], dash: DASH[id], values: res.scenarios[id].annees.map(fn), off: !res.scenarios[id].eligible }; });
+  }
+  function years() { return res.scenarios.lmnp_reel.annees.map(function (a) { return a.annee; }); }
+
+  function renderChart() {
+    var body = $('#chart-body'); body.setAttribute('aria-labelledby', 'tab-' + state.tab);
+    var t = state.tab, html = '';
+    var defs = {
+      enrichissement: { title: 'Enrichissement net si vous revendez à la fin de chaque année', desc: 'Cash-flows cumulés après impôt, plus le produit net de la vente, moins l\'apport. C\'est la courbe qui départage les montages.', fn: function (a) { return a.enrichissement; }, fmt: eurK, tfmt: eur },
+      cf: { title: 'Cash-flow annuel après impôt', desc: 'Loyers moins charges, crédit et impôts. Un cash-flow négatif est un effort d\'épargne. Le saut correspond à la fin du crédit ou des amortissements.', fn: function (a) { return a.cf; }, fmt: eurK, tfmt: eur },
+      tri: { title: 'Taux de rendement interne selon l\'année de revente', desc: 'Rendement annuel équivalent de l\'apport et des efforts d\'épargne. Les premières années sont pénalisées par les frais d\'acquisition.', fn: function (a) { return a.tri; }, fmt: function (v) { return pct(v, 0); }, tfmt: function (v) { return pct(v); } },
+      impots: { title: 'Impôts cumulés pendant la location', desc: 'Impôt sur le revenu, prélèvements ou cotisations sociales, IS et PFU sur les distributions, hors impôt de plus-value.', fn: function (a) { return a.impotsCumules; }, fmt: eurK, tfmt: eur }
+    };
+    if (defs[t]) {
+      var d = defs[t];
+      html = head(d.title, d.desc) + legendHtml() + '<div class="chart" id="chart"></div>' + tableToggle();
+      body.innerHTML = html;
+      var ser = seriesFor(d.fn);
+      lineChart($('#chart'), { x: years(), series: ser, fmt: d.fmt, tfmt: d.tfmt, marker: state.sell - 1 });
+      if (state.showTable) dataTable(ser, d.tfmt);
+    } else if (t === 'amort') {
+      var opts = ['lmnp_reel', 'sarl_famille', 'sci_is'];
+      if (opts.indexOf(state.focusScen) < 0) state.focusScen = 'lmnp_reel';
+      html = head('Amortissements déduits, reportés et perdus', 'En LMNP et SARL de famille, l\'amortissement ne peut pas créer de déficit : l\'excédent est reporté, ou perdu si l\'article 7 s\'applique. Le total déduit est réintégré dans la plus-value à la revente.',
+        '<label class="scen-pick">Scénario <select id="focus">' + opts.map(function (id) { return '<option value="' + id + '"' + (id === state.focusScen ? ' selected' : '') + '>' + NOMS[id] + '</option>'; }).join('') + '</select></label>') +
+        '<div class="legend" aria-label="Légende"><span class="legend-static" style="display:inline-flex;gap:14px;font-size:13px;color:var(--ink-2)"><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--s1)"/></svg> Déduit</span><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--s2)"/></svg> Perdu</span><span><svg width="20" height="12"><line x1="0" y1="6" x2="20" y2="6" stroke="var(--ink-2)" stroke-width="2" stroke-dasharray="4 3"/></svg> Stock reporté</span></span></div>' +
+        '<div class="chart" id="chart"></div>' + tableToggle();
+      body.innerHTML = html;
+      $('#focus').addEventListener('change', function (e) { state.focusScen = e.target.value; renderChart(); });
+      var A = res.scenarios[state.focusScen].annees;
+      barChart($('#chart'), { x: years(), stacks: [
+        { name: 'Déduit', color: 'var(--s1)', values: A.map(function (a) { return a.amortissementDeduit; }) },
+        { name: 'Perdu', color: 'var(--s2)', values: A.map(function (a) { return a.amortissementPerdu; }) }
+      ], line: { name: 'Stock reporté', values: A.map(function (a) { return a.ardStock; }) }, marker: state.sell - 1 });
+      if (state.showTable) dataTable([
+        { name: 'Déduit', values: A.map(function (a) { return a.amortissementDeduit; }) },
+        { name: 'Perdu', values: A.map(function (a) { return a.amortissementPerdu; }) },
+        { name: 'Stock reporté', values: A.map(function (a) { return a.ardStock; }) },
+        { name: 'Cumul réintégré', values: A.map(function (a) { return a.amortCumulReintegre; }) }
+      ], eur);
+    } else if (t === 'resultat') {
+      var ro = ['lmnp_reel', 'sarl_famille', 'sci_is'];
+      if (ro.indexOf(state.focusScen) < 0) state.focusScen = 'lmnp_reel';
+      var RA = res.scenarios[state.focusScen].annees;
+      var rs = [
+        { id: 'm_rec', name: 'Recettes', color: 'var(--s1)', dash: '', values: RA.map(function (a) { return a.recettes; }) },
+        { id: 'm_chg', name: 'Charges et intérêts', color: 'var(--s2)', dash: '6 3', values: RA.map(function (a) { return a.charges + a.interets + a.assurance; }) },
+        { id: 'm_amo', name: 'Amortissement', color: 'var(--s3)', dash: '2 3', values: RA.map(function (a) { return Math.max(0, Math.round(a.amortissementDeduit)); }) },
+        { id: 'm_res', name: 'Résultat imposable', color: 'var(--s4)', dash: '', values: RA.map(function (a) { return Math.max(0, a.resultatFiscal); }) },
+        { id: 'm_imp', name: 'Impôts et cotisations', color: 'var(--s5)', dash: '8 3 2 3', values: RA.map(function (a) { return a.impot.total; }) }
+      ];
+      html = head('Des recettes au résultat imposable', 'Résultat imposable = recettes − charges et intérêts − amortissement. Les intérêts baissent chaque année et l\'amortissement finit par s\'épuiser : le résultat monte, l\'impôt apparaît, et le cash-flow recule.',
+        '<label class="scen-pick">Scénario <select id="focus">' + ro.map(function (id) { return '<option value="' + id + '"' + (id === state.focusScen ? ' selected' : '') + '>' + NOMS[id] + '</option>'; }).join('') + '</select></label>') +
+        '<div class="legend" aria-label="Légende"><span style="display:inline-flex;flex-wrap:wrap;gap:6px 16px;font-size:13px;color:var(--ink-2)">' + rs.map(function (x) { return '<span style="display:inline-flex;align-items:center;gap:6px"><svg width="22" height="10" aria-hidden="true"><line x1="1" y1="5" x2="21" y2="5" stroke="' + x.color + '" stroke-width="2.5" stroke-dasharray="' + x.dash + '" stroke-linecap="round"/></svg>' + x.name + '</span>'; }).join('') + '</span></div>' +
+        '<div class="chart" id="chart"></div>' + tableToggle();
+      body.innerHTML = html;
+      $('#focus').addEventListener('change', function (e) { state.focusScen = e.target.value; renderChart(); });
+      rs.forEach(function (x) { x.short = { m_chg: 'Charges', m_res: 'Résultat', m_imp: 'Impôts' }[x.id] || x.name; });
+      lineChart($('#chart'), { x: years(), series: rs, fmt: eurK, tfmt: eur, marker: state.sell - 1 });
+      if (state.showTable) dataTable(rs.concat([{ name: 'Cash-flow après impôt', values: RA.map(function (a) { return a.cf; }) }]), eur);
+    } else if (t === 'pret') {
+      var P = res.scenarios.lmnp_reel.pret, part = res.params.partFoyer, LA = P.annees;
+      var xs = LA.map(function (_, i) { return res.params.anneeAcquisition + i; });
+      var totI = 0, totA = 0, cumI = [];
+      LA.forEach(function (a) { totI += a.interets; totA += a.assurance; cumI.push(totI); });
+      var frais = res.params.pret.fraisDossierGarantie, cout = totI + totA + frais;
+      var facts = [
+        ['Montant emprunté', eur(P.montant)],
+        ['Mensualité hors assurance', eur(P.mensualite)],
+        ['Mensualité avec assurance', eur(P.mensualite + P.assuranceMensuelle)],
+        ['Total des intérêts', eur(totI)],
+        ['Total de l\'assurance', eur(totA)],
+        ['Coût total du crédit, frais compris', eur(cout) + (P.montant > 0 ? ' (' + pct(cout / P.montant, 0) + ' du capital)' : '')]
+      ];
+      html = head('Détail du prêt', 'Répartition de chaque annuité entre intérêts, assurance et capital remboursé. Intérêts et assurance sont déductibles au réel, pas le capital. Montants pour 100 % du bien' + (part < 1 ? ' : votre foyer en porte ' + pct(part, 0) : '') + '. La SCI à l\'IR emprunte un peu moins, faute de mobilier.') +
+        '<dl class="facts">' + facts.map(function (f) { return '<div><dt>' + f[0] + '</dt><dd>' + f[1] + '</dd></div>'; }).join('') + '</dl>' +
+        '<div class="legend" aria-label="Légende"><span style="display:inline-flex;gap:14px;font-size:13px;color:var(--ink-2)"><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--s2)"/></svg> Intérêts</span><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--s3)"/></svg> Assurance</span><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--s1)"/></svg> Capital remboursé</span></span></div>' +
+        '<div class="chart" id="chart"></div>' + tableToggle();
+      body.innerHTML = html;
+      if (!LA.length) { $('#chart').innerHTML = '<p class="hint">Aucun emprunt : l\'apport couvre tout le projet.</p>'; }
+      else {
+        barChart($('#chart'), { x: xs, label: 'Annuités du prêt par année', stacks: [
+          { name: 'Intérêts', color: 'var(--s2)', values: LA.map(function (a) { return a.interets; }) },
+          { name: 'Assurance', color: 'var(--s3)', values: LA.map(function (a) { return a.assurance; }) },
+          { name: 'Capital remboursé', color: 'var(--s1)', values: LA.map(function (a) { return a.capital; }) }
+        ], extra: [
+          { name: 'Capital restant dû', values: LA.map(function (a) { return a.crdFin; }) },
+          { name: 'Intérêts cumulés', values: cumI }
+        ], marker: state.sell - 1 < LA.length ? state.sell - 1 : null });
+        if (state.showTable) dataTable([
+          { name: 'Intérêts', values: LA.map(function (a) { return a.interets; }) },
+          { name: 'Assurance', values: LA.map(function (a) { return a.assurance; }) },
+          { name: 'Capital remboursé', values: LA.map(function (a) { return a.capital; }) },
+          { name: 'Annuité totale', values: LA.map(function (a) { return a.interets + a.assurance + a.capital; }) },
+          { name: 'Capital restant dû', values: LA.map(function (a) { return a.crdFin; }) },
+          { name: 'Intérêts cumulés', values: cumI }
+        ], eur, xs);
+      }
+    } else if (t === 'sensib') {
+      if (IDS.indexOf(state.focusScen) < 0) state.focusScen = 'lmnp_reel';
+      html = head('Ce qui fait varier l\'enrichissement après ' + state.sell + ' ans', 'Chaque barre montre l\'écart d\'enrichissement quand une seule hypothèse bouge, toutes les autres restant fixes. Les hypothèses sont classées de la plus à la moins influente.',
+        '<label class="scen-pick">Scénario <select id="focus">' + IDS.map(function (id) { return '<option value="' + id + '"' + (id === state.focusScen ? ' selected' : '') + '>' + NOMS[id] + '</option>'; }).join('') + '</select></label>') +
+        '<div class="legend"><span style="display:inline-flex;gap:14px;font-size:13px;color:var(--ink-2)"><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--s1)"/></svg> Hypothèse favorable</span><span><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="var(--bad)"/></svg> Hypothèse défavorable</span></span></div>' +
+        '<div class="chart" id="chart"></div>';
+      body.innerHTML = html;
+      $('#focus').addEventListener('change', function (e) { state.focusScen = e.target.value; renderChart(); });
+      tornado($('#chart'), sensitivity(state.focusScen, state.sell));
+    }
+    var tg = $('#tgl'); if (tg) tg.addEventListener('click', function () { state.showTable = !state.showTable; renderChart(); });
+    $$('#chart-body .legend [data-ser]').forEach(function (b) {
+      b.addEventListener('click', function () { state.hidden[b.dataset.ser] = !state.hidden[b.dataset.ser]; renderChart(); });
+    });
+  }
+  function head(title, desc, extra) {
+    return '<div class="chart-head"><div><h3>' + title + '</h3><p>' + desc + '</p></div>' + (extra || '') + '</div>';
+  }
+  function tableToggle() { return '<div class="table-toggle"><button class="btn" id="tgl" type="button" aria-expanded="' + state.showTable + '">' + (state.showTable ? 'Masquer le tableau' : 'Voir les valeurs en tableau') + '</button></div><div id="dt"></div>'; }
+  function legendHtml() {
+    return '<div class="legend" role="group" aria-label="Afficher ou masquer un scénario">' + IDS.map(function (id) {
+      return '<button type="button" data-ser="' + id + '" aria-pressed="' + !state.hidden[id] + '"><svg width="22" height="10" aria-hidden="true"><line x1="1" y1="5" x2="21" y2="5" stroke="' + COLOR[id] + '" stroke-width="2.5" stroke-dasharray="' + DASH[id] + '" stroke-linecap="round"/></svg>' + NOMS[id] + '</button>';
+    }).join('') + '</div>';
+  }
+  function dataTable(series, fmt, xs) {
+    var x = xs || years();
+    var h = '<div class="data-table"><table><thead><tr><th scope="col">Année</th>' + series.map(function (s) { return '<th scope="col">' + esc(s.name) + '</th>'; }).join('') + '</tr></thead><tbody>' +
+      x.map(function (yr, i) { return '<tr><th scope="row">' + yr + ' (' + (i + 1) + ')</th>' + series.map(function (s) { return '<td>' + fmt(s.values[i]) + '</td>'; }).join('') + '</tr>'; }).join('') + '</tbody></table></div>';
+    $('#dt').innerHTML = h;
+  }
+
+  // ---- échelle « jolie »
+  function niceTicks(min, max, count) {
+    if (min === max) { min -= 1; max += 1; }
+    var span = max - min, step = Math.pow(10, Math.floor(Math.log10(span / count)));
+    var err = span / count / step;
+    if (err >= 7.5) step *= 10; else if (err >= 3.5) step *= 5; else if (err >= 1.5) step *= 2;
+    var lo = Math.floor(min / step) * step, hi = Math.ceil(max / step) * step, t = [];
+    for (var v = lo; v <= hi + step / 2; v += step) t.push(Math.abs(v) < step / 1e6 ? 0 : v);
+    return t;
+  }
+  function svgEl(tag, attrs) { var e = document.createElementNS('http://www.w3.org/2000/svg', tag); for (var k in attrs) e.setAttribute(k, attrs[k]); return e; }
+
+  // ---- courbes avec réticule et info-bulle (souris et clavier)
+  function lineChart(el, o) {
+    var W = Math.max(320, el.clientWidth), small = W < 560, H = small ? 280 : 340;
+    var m = { t: 12, r: small ? 12 : 110, b: 28, l: 56 };
+    var vis = o.series.filter(function (s) { return !state.hidden[s.id]; });
+    var all = []; vis.forEach(function (s) { s.values.forEach(function (v) { if (v != null && isFinite(v)) all.push(v); }); });
+    if (!all.length) all = [0, 1];
+    var ticks = niceTicks(Math.min(0, Math.min.apply(null, all)), Math.max(0, Math.max.apply(null, all)), 5);
+    var y0 = ticks[0], y1 = ticks[ticks.length - 1], N = o.x.length;
+    var X = function (i) { return m.l + (N === 1 ? 0 : i / (N - 1)) * (W - m.l - m.r); };
+    var Y = function (v) { return m.t + (1 - (v - y0) / (y1 - y0)) * (H - m.t - m.b); };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', tabindex: 0, 'aria-label': 'Graphique, flèches gauche et droite pour parcourir les années' });
+    var g = svgEl('g', { class: 'axis' }); svg.appendChild(g);
+    ticks.forEach(function (t) {
+      g.appendChild(svgEl('line', { x1: m.l, x2: W - m.r, y1: Y(t), y2: Y(t), stroke: t === 0 ? 'var(--axis)' : 'var(--grid)', 'stroke-width': t === 0 ? 1.5 : 1 }));
+      var tx = svgEl('text', { x: m.l - 8, y: Y(t) + 4, 'text-anchor': 'end' }); tx.textContent = o.fmt(t); g.appendChild(tx);
+    });
+    var every = N > 20 ? 5 : N > 10 ? 2 : 1;
+    o.x.forEach(function (yr, i) { if (i % every && i !== N - 1) return; var tx = svgEl('text', { x: X(i), y: H - 8, 'text-anchor': 'middle' }); tx.textContent = yr; g.appendChild(tx); });
+    // repère de l'année de revente
+    if (o.marker != null && o.marker < N) {
+      svg.appendChild(svgEl('line', { x1: X(o.marker), x2: X(o.marker), y1: m.t, y2: H - m.b, stroke: 'var(--accent)', 'stroke-width': 1, 'stroke-dasharray': '3 3' }));
+    }
+    // séries
+    var labels = [];
+    vis.forEach(function (s) {
+      var d = '', pen = false;
+      s.values.forEach(function (v, i) { if (v == null || !isFinite(v)) { pen = false; return; } d += (pen ? 'L' : 'M') + X(i).toFixed(1) + ',' + Y(v).toFixed(1); pen = true; });
+      svg.appendChild(svgEl('path', { d: d, fill: 'none', stroke: s.color, 'stroke-width': 2, 'stroke-dasharray': s.dash, 'stroke-linejoin': 'round', 'stroke-linecap': 'round', opacity: s.off ? 0.45 : 1 }));
+      var li = s.values.length - 1; while (li >= 0 && (s.values[li] == null || !isFinite(s.values[li]))) li--;
+      if (li >= 0) labels.push({ s: s, y: Y(s.values[li]), x: X(li) });
+    });
+    // étiquettes en bout de courbe, sans collision
+    if (!small) {
+      labels.sort(function (a, b) { return a.y - b.y; });
+      for (var k = 1; k < labels.length; k++) if (labels[k].y - labels[k - 1].y < 15) labels[k].y = labels[k - 1].y + 15;
+      labels.forEach(function (l) {
+        svg.appendChild(svgEl('circle', { cx: l.x, cy: Y(l.s.values[l.s.values.length - 1]) || l.y, r: 3, fill: l.s.color }));
+        var tx = svgEl('text', { x: l.x + 8, y: l.y + 4, class: 'endlabel' }); tx.textContent = l.s.short || l.s.name; svg.appendChild(tx);
+      });
+    }
+    // calque d'interaction
+    var cross = svgEl('line', { y1: m.t, y2: H - m.b, stroke: 'var(--ink-2)', 'stroke-width': 1, visibility: 'hidden' });
+    svg.appendChild(cross);
+    var dots = vis.map(function (s) { var c = svgEl('circle', { r: 4.5, fill: s.color, stroke: 'var(--surface)', 'stroke-width': 2, visibility: 'hidden' }); svg.appendChild(c); return c; });
+    var hit = svgEl('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' });
+    svg.appendChild(hit);
+    el.innerHTML = ''; el.appendChild(svg);
+    var tip = document.createElement('div'); tip.className = 'tooltip'; tip.setAttribute('role', 'status'); el.appendChild(tip);
+    var cur = -1;
+    function show(i) {
+      cur = Math.max(0, Math.min(N - 1, i));
+      cross.setAttribute('x1', X(cur)); cross.setAttribute('x2', X(cur)); cross.setAttribute('visibility', 'visible');
+      var rows = vis.map(function (s, j) {
+        var v = s.values[cur];
+        if (v == null || !isFinite(v)) { dots[j].setAttribute('visibility', 'hidden'); }
+        else { dots[j].setAttribute('cx', X(cur)); dots[j].setAttribute('cy', Y(v)); dots[j].setAttribute('visibility', 'visible'); }
+        return { s: s, v: v };
+      }).sort(function (a, b) { return (b.v == null ? -Infinity : b.v) - (a.v == null ? -Infinity : a.v); });
+      tip.innerHTML = '<h4>' + o.x[cur] + ', année ' + (cur + 1) + '</h4>' + rows.map(function (r) {
+        return '<div class="tr"><svg width="16" height="8"><line x1="1" y1="4" x2="15" y2="4" stroke="' + r.s.color + '" stroke-width="2.5" stroke-dasharray="' + r.s.dash + '"/></svg><span>' + esc(r.s.name) + '</span><b>' + (r.v == null || !isFinite(r.v) ? '—' : o.tfmt(r.v)) + '</b></div>';
+      }).join('');
+      var px = X(cur) / W * el.clientWidth;
+      var left = px + 14; if (left + 230 > el.clientWidth) left = px - 244; if (left < 0) left = 0;
+      tip.style.left = left + 'px'; tip.style.top = '8px'; tip.classList.add('show');
+    }
+    function hide() { cross.setAttribute('visibility', 'hidden'); dots.forEach(function (d) { d.setAttribute('visibility', 'hidden'); }); tip.classList.remove('show'); }
+    function idxFromEvent(e) { var r = svg.getBoundingClientRect(); var x = (e.clientX - r.left) / r.width * W; return Math.round((x - m.l) / ((W - m.l - m.r) / Math.max(1, N - 1))); }
+    hit.addEventListener('pointermove', function (e) { show(idxFromEvent(e)); });
+    hit.addEventListener('pointerleave', hide);
+    hit.addEventListener('click', function (e) { var i = idxFromEvent(e); setSell(i + 1); });
+    svg.addEventListener('focus', function () { show(o.marker != null ? o.marker : 0); });
+    svg.addEventListener('blur', hide);
+    svg.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowRight') { show(cur + 1); e.preventDefault(); }
+      else if (e.key === 'ArrowLeft') { show(cur - 1); e.preventDefault(); }
+      else if (e.key === 'Enter') { setSell(cur + 1); }
+    });
+  }
+  function setSell(n) { state.sell = Math.max(1, Math.min(res.params.horizon, n)); $('#sell').value = state.sell; renderCompare(); renderChart(); persist(); }
+
+  // ---- barres empilées + ligne de stock
+  function barChart(el, o) {
+    var W = Math.max(320, el.clientWidth), H = W < 560 ? 260 : 320, m = { t: 12, r: 16, b: 28, l: 56 }, N = o.x.length;
+    var tot = o.x.map(function (_, i) { return o.stacks.reduce(function (s, st) { return s + st.values[i]; }, 0); });
+    var mx = Math.max.apply(null, tot.concat(o.line ? o.line.values : []).concat([1]));
+    var ticks = niceTicks(0, mx, 5), y1 = ticks[ticks.length - 1];
+    var bw = (W - m.l - m.r) / N, gap = Math.max(2, bw * 0.25);
+    var X = function (i) { return m.l + i * bw; }, Y = function (v) { return m.t + (1 - v / y1) * (H - m.t - m.b); };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', tabindex: 0, 'aria-label': (o.label || 'Amortissements par année') + ', flèches pour parcourir' });
+    var g = svgEl('g', { class: 'axis' }); svg.appendChild(g);
+    ticks.forEach(function (t) {
+      g.appendChild(svgEl('line', { x1: m.l, x2: W - m.r, y1: Y(t), y2: Y(t), stroke: t === 0 ? 'var(--axis)' : 'var(--grid)' }));
+      var tx = svgEl('text', { x: m.l - 8, y: Y(t) + 4, 'text-anchor': 'end' }); tx.textContent = eurK(t); g.appendChild(tx);
+    });
+    var every = N > 20 ? 5 : N > 10 ? 2 : 1;
+    o.x.forEach(function (yr, i) { if (i % every && i !== N - 1) return; var tx = svgEl('text', { x: X(i) + bw / 2, y: H - 8, 'text-anchor': 'middle' }); tx.textContent = yr; g.appendChild(tx); });
+    if (o.marker != null) svg.appendChild(svgEl('rect', { x: X(o.marker), y: m.t, width: bw, height: H - m.t - m.b, fill: 'var(--accent-wash)' }));
+    o.x.forEach(function (_, i) {
+      var base = 0, segs = o.stacks.filter(function (st) { return st.values[i] > 0.5; });
+      segs.forEach(function (st, j) {
+        var v = st.values[i], top = j === segs.length - 1;
+        var y = Y(base + v), h = Y(base) - y - (j > 0 ? 0 : 0);
+        var x = X(i) + gap / 2, w = bw - gap;
+        if (top) {
+          var r = Math.min(4, w / 2, h);
+          var d = 'M' + x + ',' + (y + h) + 'V' + (y + r) + 'Q' + x + ',' + y + ' ' + (x + r) + ',' + y + 'H' + (x + w - r) + 'Q' + (x + w) + ',' + y + ' ' + (x + w) + ',' + (y + r) + 'V' + (y + h) + 'Z';
+          svg.appendChild(svgEl('path', { d: d, fill: st.color }));
+        } else svg.appendChild(svgEl('rect', { x: x, y: y, width: w, height: Math.max(0, h - 2), fill: st.color }));
+        base += v;
+      });
+    });
+    if (o.line) {
+      var d = ''; o.line.values.forEach(function (v, i) { d += (i ? 'L' : 'M') + (X(i) + bw / 2) + ',' + Y(v); });
+      svg.appendChild(svgEl('path', { d: d, fill: 'none', stroke: 'var(--ink-2)', 'stroke-width': 2, 'stroke-dasharray': '4 3' }));
+    }
+    var hl = svgEl('rect', { y: m.t, width: bw, height: H - m.t - m.b, fill: 'var(--ink)', opacity: 0, 'pointer-events': 'none' }); svg.appendChild(hl);
+    var hit = svgEl('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }); svg.appendChild(hit);
+    el.innerHTML = ''; el.appendChild(svg);
+    var tip = document.createElement('div'); tip.className = 'tooltip'; tip.setAttribute('role', 'status'); el.appendChild(tip);
+    var cur = -1;
+    function show(i) {
+      cur = Math.max(0, Math.min(N - 1, i));
+      hl.setAttribute('x', X(cur)); hl.setAttribute('opacity', 0.06);
+      tip.innerHTML = '<h4>' + o.x[cur] + ', année ' + (cur + 1) + '</h4>' + o.stacks.map(function (st) {
+        return '<div class="tr"><svg width="12" height="12"><rect width="12" height="12" rx="2" fill="' + st.color + '"/></svg><span>' + st.name + '</span><b>' + eur(st.values[cur]) + '</b></div>';
+      }).join('') + (o.line ? '<div class="tr"><svg width="16" height="8"><line x1="1" y1="4" x2="15" y2="4" stroke="var(--ink-2)" stroke-width="2" stroke-dasharray="4 3"/></svg><span>' + o.line.name + '</span><b>' + eur(o.line.values[cur]) + '</b></div>' : '') +
+        (o.extra || []).map(function (x) { return '<div class="tr"><span></span><span>' + x.name + '</span><b>' + eur(x.values[cur]) + '</b></div>'; }).join('');
+      var px = (X(cur) + bw) / W * el.clientWidth, left = px + 10; if (left + 230 > el.clientWidth) left = X(cur) / W * el.clientWidth - 240; if (left < 0) left = 0;
+      tip.style.left = left + 'px'; tip.style.top = '8px'; tip.classList.add('show');
+    }
+    function hide() { hl.setAttribute('opacity', 0); tip.classList.remove('show'); }
+    function idx(e) { var r = svg.getBoundingClientRect(); return Math.floor(((e.clientX - r.left) / r.width * W - m.l) / bw); }
+    hit.addEventListener('pointermove', function (e) { show(idx(e)); });
+    hit.addEventListener('pointerleave', hide);
+    hit.addEventListener('click', function (e) { setSell(idx(e) + 1); });
+    svg.addEventListener('focus', function () { show(o.marker || 0); });
+    svg.addEventListener('blur', hide);
+    svg.addEventListener('keydown', function (e) { if (e.key === 'ArrowRight') { show(cur + 1); e.preventDefault(); } else if (e.key === 'ArrowLeft') { show(cur - 1); e.preventDefault(); } else if (e.key === 'Enter') setSell(cur + 1); });
+  }
+
+  // ---- sensibilité (tornado)
+  function sensitivity(id, n) {
+    var p = res.params, T = R.TYPES_LOCATION[p.location.type];
+    var base = res.scenarios[id].annees[n - 1].enrichissement;
+    var tests = [
+      { name: 'Taux du crédit ± 1 point', lo: { pret: { taux: p.pret.taux + 0.01 } }, hi: { pret: { taux: Math.max(0, p.pret.taux - 0.01) } }, loL: pct(p.pret.taux + 0.01, 2), hiL: pct(Math.max(0, p.pret.taux - 0.01), 2) },
+      T.tourisme
+        ? { name: 'Taux d\'occupation ± 10 points', lo: { location: { tauxOccupation: Math.max(0, p.location.tauxOccupation - 0.1) } }, hi: { location: { tauxOccupation: Math.min(1, p.location.tauxOccupation + 0.1) } }, loL: pct(p.location.tauxOccupation - 0.1, 0), hiL: pct(Math.min(1, p.location.tauxOccupation + 0.1), 0) }
+        : { name: 'Loyer ± 10 %', lo: { location: { loyerMensuel: p.location.loyerMensuel * 0.9 } }, hi: { location: { loyerMensuel: p.location.loyerMensuel * 1.1 } }, loL: eur(p.location.loyerMensuel * 0.9), hiL: eur(p.location.loyerMensuel * 1.1) },
+      { name: 'Hausse du prix du bien ± 1 point par an', lo: { revente: { revalorisationBien: p.revente.revalorisationBien - 0.01 } }, hi: { revente: { revalorisationBien: p.revente.revalorisationBien + 0.01 } }, loL: pct(p.revente.revalorisationBien - 0.01), hiL: pct(p.revente.revalorisationBien + 0.01) },
+      { name: 'Frais de gestion ± 5 points', lo: { location: { fraisGestionPct: p.location.fraisGestionPct + 0.05 } }, hi: { location: { fraisGestionPct: Math.max(0, p.location.fraisGestionPct - 0.05) } }, loL: pct(p.location.fraisGestionPct + 0.05, 0), hiL: pct(Math.max(0, p.location.fraisGestionPct - 0.05), 0) },
+      { name: 'Revenu imposable du foyer ± 20 000 €', lo: { foyer: { revenuImposable: p.foyer.revenuImposable + 20000 } }, hi: { foyer: { revenuImposable: Math.max(0, p.foyer.revenuImposable - 20000) } }, loL: eur(p.foyer.revenuImposable + 20000), hiL: eur(Math.max(0, p.foyer.revenuImposable - 20000)) },
+      { name: 'Charges annuelles ± 20 %', lo: { charges: scaleCharges(p.charges, 1.2) }, hi: { charges: scaleCharges(p.charges, 0.8) }, loL: '+20 %', hiL: '−20 %' },
+      { name: 'Version de l\'article 7', lo: { fiscal: { article7Version: 'commission' } }, hi: { fiscal: { article7Version: 'actuel' } }, loL: 'commission', hiL: 'droit actuel' }
+    ];
+    return { base: base, rows: tests.map(function (t) {
+      var lo = S.simuler(S.deepMerge(p, t.lo)).scenarios[id].annees[n - 1].enrichissement - base;
+      var hi = S.simuler(S.deepMerge(p, t.hi)).scenarios[id].annees[n - 1].enrichissement - base;
+      return { name: t.name, lo: lo, hi: hi, loL: t.loL, hiL: t.hiL };
+    }).sort(function (a, b) { return (Math.abs(b.hi - b.lo)) - (Math.abs(a.hi - a.lo)); }) };
+  }
+  function scaleCharges(c, f) { return { taxeFonciere: c.taxeFonciere * f, copro: c.copro * f, entretien: c.entretien * f, chargesCourteDuree: c.chargesCourteDuree * f, energie: (c.energie || 0) * f, internet: (c.internet || 0) * f, assurancePNO: c.assurancePNO * f }; }
+  function tornado(el, d) {
+    var W = Math.max(320, el.clientWidth), small = W < 620, rowH = 34;
+    var m = { t: 24, r: 16, b: 8, l: small ? 8 : 280 };
+    var H = m.t + d.rows.length * (small ? rowH + 18 : rowH) + m.b;
+    var mx = Math.max.apply(null, d.rows.map(function (r) { return Math.max(Math.abs(r.lo), Math.abs(r.hi)); }).concat([1]));
+    var cx = m.l + (W - m.l - m.r) / 2, half = (W - m.l - m.r) / 2 - (small ? 60 : 130);
+    var Xv = function (v) { return cx + v / mx * half; };
+    var svg = svgEl('svg', { viewBox: '0 0 ' + W + ' ' + H, role: 'img', 'aria-label': 'Sensibilité de l\'enrichissement aux hypothèses' });
+    svg.appendChild(svgEl('line', { x1: cx, x2: cx, y1: m.t - 8, y2: H - m.b, stroke: 'var(--axis)', 'stroke-width': 1.5 }));
+    var t0 = svgEl('text', { x: cx, y: 12, 'text-anchor': 'middle', class: 'tick' }); t0.textContent = 'Base : ' + eur(d.base); svg.appendChild(t0);
+    d.rows.forEach(function (r, i) {
+      var y = m.t + i * (small ? rowH + 18 : rowH) + (small ? 18 : 0);
+      if (Math.abs(r.lo) < 0.5 && Math.abs(r.hi) < 0.5) {
+        var nz = svgEl('text', { x: cx + 8, y: y + rowH / 2 + 1, class: 'tick' }); nz.textContent = 'sans effet sur ce scénario'; svg.appendChild(nz);
+      }
+      var lab = svgEl('text', { x: small ? m.l : m.l - 12, y: small ? y - 4 : y + rowH / 2 + 1, 'text-anchor': small ? 'start' : 'end', class: 'endlabel' }); lab.textContent = r.name; svg.appendChild(lab);
+      [[r.lo, r.loL], [r.hi, r.hiL]].forEach(function (pair) {
+        var v = pair[0]; if (Math.abs(v) < 0.5) return;
+        var x0 = Math.min(cx, Xv(v)), w = Math.abs(Xv(v) - cx);
+        svg.appendChild(svgEl('rect', { x: x0 + (v > 0 ? 1 : -1), y: y + 6, width: Math.max(1, w - 1), height: rowH - 14, rx: 3, fill: v > 0 ? 'var(--s1)' : 'var(--bad)' }));
+        var tx = svgEl('text', { x: v > 0 ? Xv(v) + 6 : Xv(v) - 6, y: y + rowH / 2 + 1, 'text-anchor': v > 0 ? 'start' : 'end', class: 'tick' });
+        tx.textContent = (v > 0 ? '+' : '') + eurK(v) + (small ? '' : ' (' + pair[1] + ')'); svg.appendChild(tx);
+      });
+    });
+    el.innerHTML = ''; el.appendChild(svg);
+  }
+
+  // ------------------------------------------------------------------ vigilance et sources
+  function renderAlerts() {
+    var groups = [{ who: 'Pour toute l\'opération', items: res.alertes }];
+    IDS.forEach(function (id) { if (res.scenarios[id].alertes.length) groups.push({ who: NOMS[id], items: res.scenarios[id].alertes }); });
+    $('#alerts').innerHTML = groups.map(function (g) {
+      return '<li><span class="who">' + esc(g.who) + '</span><ul>' + g.items.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') + '</ul></li>';
+    }).join('');
+  }
+  function renderSources() {
+    var v = res.article7;
+    var list = [
+      ['Barème de l\'impôt sur le revenu', R.BAREME_IR.source],
+      ['Prélèvements sociaux', R.PS.source + '. BIC meublés 18,6 %, revenus fonciers et plus-values immobilières 17,2 %.'],
+      ['Micro-BIC', R.MICRO_BIC.source],
+      ['Amortissement LMNP', 'CGI art. 39 C ; article 7 simulé : ' + v.libelle + ' (' + v.source + ')'],
+      ['Plus-value des particuliers', R.PV_PARTICULIERS.source],
+      ['Réintégration des amortissements', R.PV_PARTICULIERS.sourceReintegration],
+      ['SARL de famille', R.SCENARIOS.sarl_famille.sources.join(' ; ')],
+      ['CFE', R.CFE.source],
+      ['Cotisations sociales en courte durée', R.SOCIAL.source + '. Estimation : indépendant, 40 % du bénéfice avec un minimum de 1 255 € ; régime général, 47,6 % des recettes après abattement de 60 % (87 % si classé).'],
+      ['SCI à l\'IR et déficit foncier', R.SCENARIOS.sci_ir.sources.join(' ; ') + ' ; ' + R.DEFICIT_FONCIER.source],
+      ['SCI à l\'IS', R.SCENARIOS.sci_is.sources.join(' ; ') + ' ; ' + R.IS.source]
+    ];
+    $('#sources').innerHTML = list.map(function (l) { return '<div><dt>' + esc(l[0]) + '</dt><dd>' + esc(l[1]) + '</dd></div>'; }).join('');
+  }
+
+  // ------------------------------------------------------------------ actions
+  $('#reset').addEventListener('click', function () { state.params = S.defaultParams(); state.sell = 10; state.hidden = {}; fillForm(); renderRail(); run(); });
+  $('#csv').addEventListener('click', function () {
+    var cols = ['annee', 'recettes', 'cf', 'resultatFiscal', 'impot', 'amortissementDeduit', 'amortissementPerdu', 'crd', 'revente_impot', 'revente_net', 'enrichissement', 'tri'];
+    var lines = ['scenario;' + cols.join(';')];
+    IDS.forEach(function (id) { res.scenarios[id].annees.forEach(function (a) {
+      var v = [a.annee, a.recettes, a.cf, a.resultatFiscal, a.impot.total, a.amortissementDeduit, a.amortissementPerdu, a.crd, a.revente.impot, a.revente.net, a.enrichissement, a.tri];
+      lines.push(NOMS[id] + ';' + v.map(function (x) { return x == null ? '' : String(Math.round(x * 10000) / 10000).replace('.', ','); }).join(';'));
+    }); });
+    var blob = new Blob(['﻿' + lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'simulation-location.csv'; a.click(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+  });
+  var themeBtn = $('#theme');
+  function isDark() { var t = document.documentElement.dataset.theme; return t ? t === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches; }
+  function syncThemeBtn() { $('#theme-label').textContent = isDark() ? 'Thème clair' : 'Thème sombre'; }
+  try { var th = localStorage.getItem('simloc.theme'); if (th) document.documentElement.dataset.theme = th; } catch (e) {}
+  themeBtn.addEventListener('click', function () { var t = isDark() ? 'light' : 'dark'; document.documentElement.dataset.theme = t; try { localStorage.setItem('simloc.theme', t); } catch (e) {} syncThemeBtn(); renderChart(); });
+  syncThemeBtn();
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (ents) { $('#mobile-bar').classList.toggle('hide', ents[0].isIntersecting); }).observe($('.results'));
+  }
+  var rz; window.addEventListener('resize', function () { clearTimeout(rz); rz = setTimeout(renderChart, 120); });
+
+  // ------------------------------------------------------------------ bulles d'aide
+  (function () {
+    var A = window.Aide || {}, pop = null, ouvert = null;
+    function fermer() { if (pop) pop.hidden = true; if (ouvert) ouvert.setAttribute('aria-expanded', 'false'); ouvert = null; }
+    function ouvrir(btn, a) {
+      if (ouvert === btn) { fermer(); return; }
+      fermer();
+      if (!pop) { pop = document.createElement('div'); pop.className = 'help-pop'; pop.id = 'help-pop'; pop.setAttribute('role', 'tooltip'); document.body.appendChild(pop); }
+      pop.innerHTML = '<h4>' + esc(a.titre) + '</h4><p>' + esc(a.quoi) + '</p>' + ((a.ou || a.ordre) ? '<dl>' +
+        (a.ou ? '<div><dt>Où le trouver</dt><dd>' + esc(a.ou) + '</dd></div>' : '') +
+        (a.ordre ? '<div><dt>Ordre de grandeur</dt><dd>' + esc(a.ordre) + '</dd></div>' : '') + '</dl>' : '');
+      pop.hidden = false;
+      var r = btn.getBoundingClientRect(), w = pop.offsetWidth, h = pop.offsetHeight;
+      var left = Math.max(12, Math.min(r.left - 8, window.innerWidth - w - 12));
+      var top = r.bottom + 8; if (top + h > window.innerHeight - 8) top = Math.max(8, r.top - h - 8);
+      pop.style.left = left + 'px'; pop.style.top = top + 'px';
+      btn.setAttribute('aria-expanded', 'true'); ouvert = btn;
+    }
+    Object.keys(A).forEach(function (id) {
+      var cible = document.querySelector('label[for="' + id + '"]') || document.getElementById(id);
+      if (!cible || cible.tagName === 'INPUT' || cible.tagName === 'SELECT') return;
+      var btn = document.createElement('button');
+      btn.type = 'button'; btn.className = 'help-btn'; btn.textContent = '?';
+      btn.setAttribute('aria-label', 'Aide : ' + A[id].titre); btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'help-pop');
+      btn.addEventListener('click', function (e) { e.preventDefault(); e.stopPropagation(); ouvrir(btn, A[id]); });
+      cible.appendChild(btn);
+    });
+    document.addEventListener('click', function (e) { if (pop && !pop.hidden && !pop.contains(e.target)) fermer(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ouvert) { var b = ouvert; fermer(); b.focus(); } });
+    $('.inputs').addEventListener('scroll', fermer, { passive: true });
+    window.addEventListener('scroll', fermer, { passive: true });
+    window.addEventListener('resize', fermer);
+  })();
+
+  // ------------------------------------------------------------------ démarrage
+  $('#maj').textContent = new Date(R.MAJ).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+  fillForm(); renderRail(); renderTabs(); run();
+})();
+</script>
+</body>
+</html>
